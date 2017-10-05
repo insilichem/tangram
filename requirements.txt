@@ -7,7 +7,7 @@ git+ssh://git@bitbucket.org/insilichem/orbitraj.git
 git+ssh://git@bitbucket.org/insilichem/plipgui.git
 git+ssh://git@bitbucket.org/insilichem/popmusicgui.git
 git+ssh://git@bitbucket.org/insilichem/propkagui.git
-git+ssh://git@bitbucket.org/insilichem/plumebase.git
+git+ssh://git@bitbucket.org/insilichem/libplume.git
 git+ssh://git@bitbucket.org/insilichem/selectionwidget.git
 git+ssh://git@bitbucket.org/insilichem/subalign.git
 git+ssh://git@bitbucket.org/insilichem/snfg.git
