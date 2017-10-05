@@ -1,5 +1,9 @@
 #!/bin/bash -e
 
+# InsiliChem Plume Installer
+# Based on the original Miniconda installer
+# https://conda.io/miniconda.html
+
 unset LD_LIBRARY_PATH
 echo "$0" | grep '\.sh$' >/dev/null
 if (( $? )); then
@@ -28,7 +32,7 @@ Installs Plume Suite
     -f           no error if install prefix already exists (force)
     -h           print this help message and exit
     -p PREFIX    install prefix, defaults to $PREFIX
-    -e ENV_NAME  name of the conda environment to use or create if needed
+    -e ENV_NAME  conda environment, defaults to $ENV_NAME
 "
             exit 2
             ;;
