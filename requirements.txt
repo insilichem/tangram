@@ -1,4 +1,4 @@
-https://github.com/insilichem/gaudiview/archive/master.zip
+git+ssh://git@github.com/insilichem/gaudiview.git
 git+ssh://git@bitbucket.org/insilichem/dummyatoms.git
 git+ssh://git@bitbucket.org/insilichem/cauchian.git
 git+ssh://git@bitbucket.org/insilichem/nciplot.git
