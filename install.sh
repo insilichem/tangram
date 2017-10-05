@@ -141,7 +141,7 @@ export PREFIX
 
 if [[ ! -f "$REQUIREMENTS" ]]; then
     echo -e "\nrequirements.txt not found; attempting automatic download..." | tee -a install.log
-    wget https://bitbucket.org/insilichem/plume-suite/raw/master/requirements.txt  -o "$REQUIREMENTS" >> install.log 2>&1 || exit_code=$?
+    wget https://bitbucket.org/insilichem/plume-installer/raw/master/requirements.txt -o "$REQUIREMENTS" >> install.log 2>&1 || exit_code=$?
     if (( exit_code > 0 )); then
         echo '  Failed! Download it manually from https://bitbucket.org/insilichem/plume-suite/raw/master/requirements.txt' >&2
         exit 1
