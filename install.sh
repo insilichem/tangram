@@ -205,5 +205,11 @@ and then launch a patched UCSF Chimera instance with:
 
     pychimera --gui
 
-Thanks for installing Plume Suite!"
+If you ever need to update an extension, use this command 
+with $ENV_NAME env activated:
+
+    pip install -t $PREFIX -U <name or URL of package>
+
+Thanks for installing Plume Suite!
+"
 ; fi
