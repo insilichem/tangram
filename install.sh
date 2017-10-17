@@ -5,15 +5,10 @@
 # https://conda.io/miniconda.html
 
 unset LD_LIBRARY_PATH
-echo "$0" | grep '\.sh$' >/dev/null
-if (( $? )); then
-    echo 'Please run using "bash" or "sh", but not "." or "source"' >&2
-    return 1
-fi
-
+_FAILED=1
 PREFIX="$HOME/insilichem/plume"
 REQUIREMENTS="requirements.txt"
-CONDA_PACKAGES="python=2.7.13 nomkl numpy=1.11 scipy=0.19 sqlite=3.13.0 libgcc=5.2.0 pcre=8.39 tk=8.5.18 libpng=1.6.30 certifi=2016.2.28 icu=54.1 glib=2.50.2 ncurses=6.0 readline=6.2 setuptools=27.2.0 cairo=1.12.18 pixman=0.32.6 freetype=2.5.5 ncurses=5.9 libiconv=1.14"
+CONDA_PACKAGES="python=2.7.13 nomkl numpy=1.11 scipy=0.19 sqlite=3.13.0 libgcc=5.2.0 pcre=8.39 tk=8.5.18 libpng=1.6.30 certifi=2016.2.28 icu=54.1 glib=2.50.2 readline=6.2 setuptools=27.2.0 cairo=1.12.18 pixman=0.32.6 freetype=2.5.5 ncurses=5.9 libiconv=1.14"
 ENV_NAME="insilichem"
 THIS_DIR=$(cd $(dirname $0); pwd)
 THIS_FILE=$(basename $0)
@@ -193,18 +188,22 @@ pychimera -c "import chimera; chimera.extension.manager.addDirectory(\"$PREFIX\"
     echo "  Use this location: $PREFIX"
     fi
 
+_FAILED=0  # If we got here, we are ok!
 source deactivate
-
+if (( $_FAILED )); then
+    echo "Installation failed. Check install.log for more info.";
+else
 # SUCCESS GREETING
 echo "
 ----------------------------------------------------------------------------
 Done! Most of the interfaces will be available now!
 However, some of them will require you to activate a conda environment with:
 
-   source activate $ENV_NAME
+    source activate $ENV_NAME
 
 and then launch a patched UCSF Chimera instance with:
 
-   pychimera --gui
+    pychimera --gui
 
 Thanks for installing Plume Suite!"
+; fi
