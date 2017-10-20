@@ -1,0 +1,12 @@
+git+https://github.com/insilichem/gaudiview.git
+git+ssh://git@bitbucket.org/insilichem/bondorder.git
+git+ssh://git@bitbucket.org/insilichem/dummyatoms.git
+git+ssh://git@bitbucket.org/insilichem/cauchian.git
+git+ssh://git@bitbucket.org/insilichem/nciplot.git
+git+ssh://git@bitbucket.org/insilichem/orbitraj.git
+git+ssh://git@bitbucket.org/insilichem/popmusicgui.git
+git+ssh://git@bitbucket.org/insilichem/propkagui.git
+git+ssh://git@bitbucket.org/insilichem/libplume.git
+git+ssh://git@bitbucket.org/insilichem/selectionwidget.git
+git+ssh://git@bitbucket.org/insilichem/subalign.git
+git+ssh://git@bitbucket.org/insilichem/snfg.git

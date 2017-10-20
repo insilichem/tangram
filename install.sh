@@ -1,20 +1,22 @@
-#!/bin/bash -e
+#!/bin/bash
+set -e
 
 # InsiliChem Plume Installer
 # Based on the original Miniconda installer
 # https://conda.io/miniconda.html
 
 unset LD_LIBRARY_PATH
-_FAILED=1
+
 PREFIX="$HOME/insilichem/plume"
-REQUIREMENTS="requirements.txt"
-CONDA_PACKAGES="python=2.7.13 nomkl numpy=1.11 scipy=0.19 sqlite=3.13.0 libgcc=5.2.0 pcre=8.39 tk=8.5.18 libpng=1.6.30 certifi=2016.2.28 icu=54.1 glib=2.50.2 readline=6.2 setuptools=27.2.0 cairo=1.12.18 pixman=0.32.6 freetype=2.5.5 ncurses=5.9 libiconv=1.14"
 ENV_NAME="insilichem"
 THIS_DIR=$(cd $(dirname $0); pwd)
 THIS_FILE=$(basename $0)
 THIS_PATH="$THIS_DIR/$THIS_FILE"
 BATCH=0
 FORCE=0
+PLATFORM=$(uname)
+REQUIREMENTSTXT="requirements-$PLATFORM.txt"
+ENVIRONMENTYML="environment-$PLATFORM.yml"
 
 while getopts "bfhpe:" x; do
     case "$x" in
@@ -23,7 +25,7 @@ while getopts "bfhpe:" x; do
 
 Installs Plume Suite
 
-    -b           run install in batch mode (without manual intervention)
+    -b           run installer in batch mode (without manual intervention)
     -f           no error if install prefix already exists (force)
     -h           print this help message and exit
     -p PREFIX    install prefix, defaults to $PREFIX
@@ -71,6 +73,8 @@ if ! [ -x "$(command -v pip)" ]; then
   echo 'Error: pip is not installed. Visit https://pip.pypa.io/en/stable/installing/' >&2
   exit 1
 fi
+
+# Actual installation begins
 
 echo "Plume installation started on $(date)" > install.log
 
@@ -133,28 +137,28 @@ if [[ ($FORCE == 0) && (-e $PREFIX) ]]; then
     exit 1
 fi
 
+
+echo "
+------------------------------------------------------------
+  From now on, if you don't see a success message when the
+  installer finishes, then an error ocurred. Check the
+  contents of install.log in that case!
+------------------------------------------------------------
+"
+
 mkdir -p "$PREFIX"
 
 PREFIX=$(cd $PREFIX; pwd)
 export PREFIX
 
-if [[ ! -f "$REQUIREMENTS" ]]; then
-    echo -e "\nrequirements.txt not found; attempting automatic download..." | tee -a install.log
-    wget https://bitbucket.org/insilichem/plume-installer/raw/master/requirements.txt -o "$REQUIREMENTS" >> install.log 2>&1 || exit_code=$?
-    if (( exit_code > 0 )); then
-        echo '  Failed! Download it manually from https://bitbucket.org/insilichem/plume-suite/raw/master/requirements.txt' >&2
-        exit 1
-    fi
-fi
-
 # Create dedicated conda environment
-source deactivate
 source activate "$ENV_NAME" >> install.log 2>&1 || exit_code=$?
 if (( exit_code > 0 )); then
     echo -e "\nCreating a new Python 2.7 conda environment: $ENV_NAME..." | tee -a install.log
-    conda create -n $ENV_NAME -y $CONDA_PACKAGES >> install.log 2>&1
+    conda create -y -n $ENV_NAME python=2.7 >> install.log 2>&1
     source activate "$ENV_NAME"
 fi
+
 ENV_PATH="$(conda info --root)/envs/$ENV_NAME"
 echo -e "Activated environment $ENV_NAME" | tee -a install.log
 
@@ -164,14 +168,16 @@ if [ $(python -c "import sys; print(sys.version_info.major)") -gt '2' ]; then
     exit 1
 fi
 
-echo "Installing Plume Suite extensions into $PREFIX with pip..." | tee -a install.log
+echo "Installing Plume Suite extensions with pip..." | tee -a install.log
 pip install -U git+https://github.com/insilichem/pychimera.git >> install.log 2>&1
-pip install --process-dependency-links -U -t $PREFIX -r $REQUIREMENTS >> install.log 2>&1
+pip install --process-dependency-links -U -t $PREFIX -r $REQUIREMENTSTXT >> install.log 2>&1
+
+if (( $PLATFORM == 'Linux' )); then
 pip install --no-deps -U https://github.com/ssalentin/plip/archive/v1.3.3.zip -t $PREFIX >> install.log 2>&1
+fi
 
 echo "Installing dependencies with conda..." | tee -a install.log
-conda install -y $CONDA_PACKAGES >> install.log 2>&1
-conda install -y -c openbabel -c omnia -c insilichem nciplot openbabel ambermini  >> install.log 2>&1
+conda env update -n $ENV_NAME -f $ENVIRONMENTYML >> install.log 2>&1
 
 mkdir -p "$ENV_PATH/etc/activate.d/"
 mkdir -p "$ENV_PATH/etc/deactivate.d/"
@@ -188,28 +194,24 @@ pychimera -c "import chimera; chimera.extension.manager.addDirectory(\"$PREFIX\"
     echo "  Use this location: $PREFIX"
     fi
 
-_FAILED=0  # If we got here, we are ok!
-source deactivate
-if (( $_FAILED )); then
-    echo "Installation failed. Check install.log for more info.";
-else
 # SUCCESS GREETING
 echo "
-----------------------------------------------------------------------------
-Done! Most of the interfaces will be available now!
-However, some of them will require you to activate a conda environment with:
+---------------------------------------------------------
+  Done! Most of the interfaces will be available now!
+  However, some of them will require you to activate a 
+  conda environment with:
 
-    source activate $ENV_NAME
+      source activate $ENV_NAME
 
-and then launch a patched UCSF Chimera instance with:
+  and then launch a patched UCSF Chimera instance with:
 
-    pychimera --gui
+      pychimera --gui
 
-If you ever need to update an extension, use this command 
-with $ENV_NAME env activated:
+  If you ever need to update an extension, use this 
+  command with $ENV_NAME env activated:
 
-    pip install -t $PREFIX -U <name or URL of package>
+      pip install -t $PREFIX -U <package name or URL>
 
-Thanks for installing Plume Suite!
+  Thanks for installing Plume Suite!
+---------------------------------------------------------
 "
-; fi

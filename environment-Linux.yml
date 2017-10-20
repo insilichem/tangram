@@ -14,7 +14,7 @@ dependencies:
   - libgcc=5.2.0
   - libiconv=1.14
   - libpng=1.6.30
-  - ncurses=5.9
+  - ncurses=6.0
   - numpy=1.11
   - pcre=8.39
   - pixman=0.32.6
