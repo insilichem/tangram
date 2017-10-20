@@ -11,7 +11,7 @@ dependencies:
   - icu=54.1
   - libiconv=1.14
   - libpng=1.6.30
-  - ncurses=5.9
+  - ncurses=6.0
   - numpy=1.11
   - pcre=8.39
   - readline=6.2

@@ -152,12 +152,9 @@ PREFIX=$(cd $PREFIX; pwd)
 export PREFIX
 
 # Create dedicated conda environment
-source activate "$ENV_NAME" >> install.log 2>&1 || exit_code=$?
-if (( exit_code > 0 )); then
-    echo -e "\nCreating a new Python 2.7 conda environment: $ENV_NAME..." | tee -a install.log
-    conda create -y -n $ENV_NAME python=2.7 >> install.log 2>&1
-    source activate "$ENV_NAME"
-fi
+echo -e "\nCreating a new Python 2.7 conda environment: $ENV_NAME..." | tee -a install.log
+conda create -y -n $ENV_NAME python=2.7 >> install.log
+source activate "$ENV_NAME"
 
 ENV_PATH="$(conda info --root)/envs/$ENV_NAME"
 echo -e "Activated environment $ENV_NAME" | tee -a install.log
