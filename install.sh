@@ -7,7 +7,7 @@ set -e
 
 unset LD_LIBRARY_PATH
 
-PREFIX="$HOME/insilichem/plume"
+PREFIX="$HOME/.local/insilichem/plume"
 ENV_NAME="insilichem"
 THIS_DIR=$(cd $(dirname $0); pwd)
 THIS_FILE=$(basename $0)
