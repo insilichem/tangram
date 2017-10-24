@@ -85,7 +85,7 @@ Welcome to the InsiliChem Plume Suite Installer!
 
 Plume Suite will now be installed into this location:
   $PREFIX
-Using this conda environment: 
+Using this conda environment:
   $ENV_NAME
 
   - Press ENTER to confirm
@@ -178,10 +178,20 @@ conda env update -n $ENV_NAME -f $ENVIRONMENTYML >> install.log 2>&1
 
 mkdir -p "$ENV_PATH/etc/activate.d/"
 mkdir -p "$ENV_PATH/etc/deactivate.d/"
+# Bash
+echo "#!/bin/bash" >> "$ENV_PATH/etc/activate.d/plume.sh"
 echo "export AMBERHOME=$ENV_PATH" >> "$ENV_PATH/etc/activate.d/plume.sh"
 echo "export NCIPLOT_HOME=$ENV_PATH/etc/nciplot" >> "$ENV_PATH/etc/activate.d/plume.sh"
+echo "#!/bin/bash" >> "$ENV_PATH/etc/deactivate.d/plume.sh"
 echo "unset AMBERHOME" >> "$ENV_PATH/etc/deactivate.d/plume.sh"
 echo "unset NCIPLOT_HOME" >> "$ENV_PATH/etc/deactivate.d/plume.sh"
+# Fish
+echo "#!/usr/bin/fish" >> "$ENV_PATH/etc/activate.d/plume.fish"
+echo "set -gx AMBERHOME $ENV_PATH" >> "$ENV_PATH/etc/activate.d/plume.fish"
+echo "set -gx NCIPLOT_HOME $ENV_PATH/etc/nciplot" >> "$ENV_PATH/etc/activate.d/plume.fish"
+echo "#!/usr/bin/fish" >> "$ENV_PATH/etc/deactivate.d/plume.fish"
+echo "set -e AMBERHOME" >> "$ENV_PATH/etc/deactivate.d/plume.fish"
+echo "set -e NCIPLOT_HOME" >> "$ENV_PATH/etc/deactivate.d/plume.fish"
 
 echo "Registering extensions in UCSF Chimera..." | tee -a install.log
 pychimera -c "import chimera; chimera.extension.manager.addDirectory(\"$PREFIX\", True)" >> install.log 2>&1 || exit_code=$?
@@ -195,7 +205,7 @@ pychimera -c "import chimera; chimera.extension.manager.addDirectory(\"$PREFIX\"
 echo "
 ---------------------------------------------------------
   Done! Most of the interfaces will be available now!
-  However, some of them will require you to activate a 
+  However, some of them will require you to activate a
   conda environment with:
 
       source activate $ENV_NAME
@@ -204,7 +214,7 @@ echo "
 
       pychimera --gui
 
-  If you ever need to update an extension, use this 
+  If you ever need to update an extension, use this
   command with $ENV_NAME env activated:
 
       pip install -t $PREFIX -U <package name or URL>
