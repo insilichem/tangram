@@ -1,8 +1,8 @@
 name:  insilichem
 channels:
-  - openbabel
   - omnia
   - insilichem
+  - rdkit
 dependencies:
   - python=2.7.13
   - nomkl
@@ -19,6 +19,6 @@ dependencies:
   - setuptools=27.2.0
   - sqlite=3.13.0
   - tk=8.5.18
-# - nciplot
-  - openbabel
+  - nciplot
   - ambermini
+  - rdkit
