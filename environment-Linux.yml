@@ -25,4 +25,4 @@ dependencies:
   - tk=8.5.18
   - nciplot
   - ambermini
-  - rdkit
+  - rdkit=2016
