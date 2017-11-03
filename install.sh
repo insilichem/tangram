@@ -23,7 +23,7 @@ while getopts "bfhpe:" x; do
         h)
             echo "usage: $0 [options]
 
-Installs Plume Suite
+Installs Plume Suite (https://github.com/insilichem/plume)
 
     -b           run installer in batch mode (without manual intervention)
     -f           no error if install prefix already exists (force)
@@ -82,6 +82,7 @@ if [[ $BATCH == 0 ]] # interactive mode
 then
 echo -n "
 Welcome to the InsiliChem Plume Suite Installer!
+<https://github.com/insilichem/plume>
 
 Plume Suite will now be installed into this location:
   $PREFIX
