@@ -9,31 +9,33 @@ It's composed of several independent graphical interfaces and commands for UCSF 
 
     - **Plume MD**: Setup MD calculations with OpenMM and ommprotocol [WIP]
 
-    - **[Cauchian](https://github.com/insilichem/cauchian)**: QM and QM/MM calculations setup
+    - **[Cauchian](https://github.com/insilichem/plume_cauchian)**: QM and QM/MM calculations setup
 
 - **Visualization**
 
-    - **[3D-SNFG](https://github.com/insilichem/snfg)**: Enable easy visualization of saccharydic residues
+    - **[3D-SNFG](https://github.com/insilichem/plume_snfg)**: Enable easy visualization of saccharydic residues
+
+    - **[BondOrder](https://github.com/insilichem/plume_bondorder)**: Automatic bond order perception for UCSF Chimera [WIP]
 
     - **[PlumeView](https://github.com/insilichem/gaudiview)** (formerly GAUDIView): Lighweight visualization of results coming from docking, conformational search or multiobjective optimization
 
     - **PlumeViewGL (provisional name)**: Experimental web interface to depict molecules, docking solutions and relational mapping of residues [WIP]
 
-    - **[OrbiTraj](https://github.com/insilichem/orbitraj)**: A subtle modification to UCSF Chimera's MD Movie extension to allow the visualization of volumetric data along a molecular trajectory
+    - **[OrbiTraj](https://github.com/insilichem/plume_orbitraj)**: A subtle modification to UCSF Chimera's MD Movie extension to allow the visualization of volumetric data along a molecular trajectory
 
 - **Analysis**
 
-    - **[NCIPlot GUI](https://github.com/insilichem/nciplot)**: Straightforward interface to setup calculations for NCIPlot and visualize them
+    - **[NCIPlot GUI](https://github.com/insilichem/plume_nciplot)**: Straightforward interface to setup calculations for NCIPlot and visualize them
 
-    - **[NormalModes](https://github.com/insilichem/normalmodes)**: Perform Normal Modes Analysis and view them directly on-screen
+    - **[NormalModes](https://github.com/insilichem/plume_normalmodes)**: Perform Normal Modes Analysis and view them directly on-screen
 
-    - **[PLIPGui](https://github.com/insilichem/plipgui)**: Depict protein-ligand interactions, as calculated with PLIP
+    - **[PLIPGui](https://github.com/insilichem/plume_plipgui)**: Depict protein-ligand interactions, as calculated with PLIP
 
-    - **[PoPMuSiCGUI](https://github.com/insilichem/popmusicgui)**: Depict and apply the predictions made by PoPMuSiC calculations
+    - **[PoPMuSiCGUI](https://github.com/insilichem/plume_popmusicgui)**: Depict and apply the predictions made by PoPMuSiC calculations
 
-    - **[PropKaGUI](https://github.com/insilichem/propkagui)**: Analyze and depict the expected pKa values of protein residues with PropKa 3.1
+    - **[PropKaGUI](https://github.com/insilichem/plume_propkagui)**: Analyze and depict the expected pKa values of protein residues with PropKa 3.1
 
-    - **[SubAlign](https://github.com/insilichem/subalign)**: Align two, potentially different, molecules based on partial matches of substructures
+    - **[SubAlign](https://github.com/insilichem/plume_subalign)**: Align two, potentially different, molecules based on partial matches of substructures
 
 
 # Installation
@@ -66,7 +68,7 @@ Each extension will check if there's a new release available every time you laun
 
     pip install -t $PREFIX -U <package name or URL>
 
-, where `$PREFIX` is the path to your UCSF Chimera extensions directory. By default, it is set to `~/.local/insilichem/plume`, but you can check it in UCSF Chimera via `Preferences> Tools` dialog.
+, where `$PREFIX` is the path to your UCSF Chimera extensions directory. By default, it is set to `~/.local/insilichem/plume_plume`, but you can check it in UCSF Chimera via `Preferences> Tools` dialog.
 
 
 # Known issues
