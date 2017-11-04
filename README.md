@@ -68,7 +68,7 @@ Each extension will check if there's a new release available every time you laun
 
     pip install -t $PREFIX -U <package name or URL>
 
-, where `$PREFIX` is the path to your UCSF Chimera extensions directory. By default, it is set to `~/.local/insilichem/plume_plume`, but you can check it in UCSF Chimera via `Preferences> Tools` dialog.
+, where `$PREFIX` is the path to your UCSF Chimera extensions directory. By default, it is set to `~/.local/insilichem/plume`, but you can check it in UCSF Chimera via `Preferences> Tools` dialog.
 
 
 # Known issues
