@@ -26,3 +26,8 @@ dependencies:
   - nciplot
   - ambermini
   - rdkit=2016
+  - openmoltools
+  - parmed
+  - openmm
+  - mdtraj
+  - pdbfixer

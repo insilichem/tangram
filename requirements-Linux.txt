@@ -4,6 +4,7 @@ git+https://github.com/insilichem/plume_dummyatoms.git
 git+https://github.com/insilichem/plume_cauchian.git
 git+https://github.com/insilichem/plume_nciplot.git
 git+https://github.com/insilichem/plume_normalmodes.git
+git+https://github.com/insilichem/plume_openmmgui.git
 git+https://github.com/insilichem/plume_orbitraj.git
 git+https://github.com/insilichem/plume_plipgui.git
 git+https://github.com/insilichem/plume_popmusicgui.git

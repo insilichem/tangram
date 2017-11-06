@@ -7,7 +7,7 @@ It's composed of several independent graphical interfaces and commands for UCSF 
 
 - **Calculation setup**
 
-    - **Plume MD**: Setup MD calculations with OpenMM and ommprotocol [WIP]
+    - **[OpenMM GUI](https://github.com/insilichem/plume_openmmgui)**: Setup MD calculations with OpenMM and ommprotocol [WIP]
 
     - **[Cauchian](https://github.com/insilichem/plume_cauchian)**: QM and QM/MM calculations setup
 
@@ -18,8 +18,6 @@ It's composed of several independent graphical interfaces and commands for UCSF 
     - **[BondOrder](https://github.com/insilichem/plume_bondorder)**: Automatic bond order perception for UCSF Chimera [WIP]
 
     - **[PlumeView](https://github.com/insilichem/gaudiview)** (formerly GAUDIView): Lighweight visualization of results coming from docking, conformational search or multiobjective optimization
-
-    - **PlumeViewGL (provisional name)**: Experimental web interface to depict molecules, docking solutions and relational mapping of residues [WIP]
 
     - **[OrbiTraj](https://github.com/insilichem/plume_orbitraj)**: A subtle modification to UCSF Chimera's MD Movie extension to allow the visualization of volumetric data along a molecular trajectory
 
