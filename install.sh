@@ -166,6 +166,9 @@ if [ $(python -c "import sys; print(sys.version_info.major)") -gt '2' ]; then
     exit 1
 fi
 
+echo "Installing dependencies with conda..." | tee -a install.log
+conda env update -n $ENV_NAME -f $ENVIRONMENTYML >> install.log 2>&1
+
 echo "Installing Plume Suite extensions with pip..." | tee -a install.log
 pip install -U git+https://github.com/insilichem/pychimera.git >> install.log 2>&1
 pip install --process-dependency-links -U -t $PREFIX -r $REQUIREMENTSTXT >> install.log 2>&1
@@ -174,8 +177,6 @@ if (( $PLATFORM == 'Linux' )); then
 pip install --no-deps -U https://github.com/ssalentin/plip/archive/v1.3.3.zip -t $PREFIX >> install.log 2>&1
 fi
 
-echo "Installing dependencies with conda..." | tee -a install.log
-conda env update -n $ENV_NAME -f $ENVIRONMENTYML >> install.log 2>&1
 
 mkdir -p "$ENV_PATH/etc/activate.d/"
 mkdir -p "$ENV_PATH/etc/deactivate.d/"
