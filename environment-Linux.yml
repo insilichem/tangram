@@ -31,3 +31,4 @@ dependencies:
   - openmm
   - mdtraj
   - pdbfixer
+  - ruamel_yaml
