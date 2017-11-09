@@ -198,10 +198,39 @@ echo "set -e NCIPLOT_HOME" >> "$ENV_PATH/etc/deactivate.d/plume.fish"
 echo "Registering extensions in UCSF Chimera..." | tee -a install.log
 pychimera -c "import chimera; chimera.extension.manager.addDirectory(\"$PREFIX\", True)" >> install.log 2>&1 || exit_code=$?
     if (( exit_code > 0 )) ; then
-    echo "  Could not register extensions automatically!"
-    echo "  You might need to add them manually via Preferences> Tools dialog."
-    echo "  Use this location: $PREFIX"
+    echo "  Could not register extensions automatically!" | tee -a install.log
+    echo "  You might need to add them manually via Preferences> Tools dialog." | tee -a install.log
+    echo "  Use this location: $PREFIX" | tee -a install.log
     fi
+
+# Chimera's Numpy is old. Offer and update exposing the cons.
+NPVERSION=$(chimera --nogui --script <(echo "import numpy as np; print(np.__version__)") 2> /dev/null)
+if $(python -c "from distutils.version import LooseVersion as V; print(str(V('$NPVERSION') < V('1.12')).lower())"); then
+    echo -n "
+Your UCSF Chimera installation is using and old NumPy version ($NPVERSION).
+This can cause problems with most of our extensions. You can update now, but
+please notice that:
+
+    - Upgrading NumPy will cause MMTK to stop working, which means that
+      the built-in extensions relying on it (Molecular Dynamics) will not work.
+
+We do offer replacements for those (Plume OpenMM GUI) that offer similar
+functionality. And, if you ever want to use MMTK in the future, you can download
+UCSF Chimera again and make a separate, unmodified, installation.
+
+Do you want to upgrade UCSF Chimera's Numpy now? Answer ([y]/n): " | tee -a install.log
+    read choice
+    case "$choice" in
+        ""|y|Y )
+            echo "Upgrading Numpy..." | tee -a install.log
+            pip install -U 'numpy==1.11.*' -t `pychimera --path`/lib/python2.7/site-packages >> install.log 2>&1
+            ;;
+        * )
+            echo "Ok! If you ever want to update it yourself, run this:" | tee -a install.log
+            echo "  pip install -U 'numpy==1.11.*' -t \`pychimera --path\`/lib/python2.7/site-packages" | tee -a install.log
+            ;;
+    esac
+fi
 
 # SUCCESS GREETING
 echo "
@@ -223,4 +252,4 @@ echo "
 
   Thanks for installing Plume Suite!
 ---------------------------------------------------------
-"
+" | tee -a install.log
