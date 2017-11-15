@@ -35,6 +35,9 @@ It's composed of several independent graphical interfaces and commands for UCSF 
 
     - **[SubAlign](https://github.com/insilichem/plume_subalign)**: Align two, potentially different, molecules based on partial matches of substructures
 
+- **Utilities**
+    -  **[VinaRelaunch](https://github.com/insilichem/plume_vinarelaunch)**: Resubmit failed AutoDock Vina jobs without reconfiguring the GUI.
+
 
 # Installation
 
