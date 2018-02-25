@@ -42,11 +42,9 @@ It's composed of several independent graphical interfaces and commands for UCSF 
 
     chmod +x chimera-*.bin && ./chimera-*.bin
 
-2 - You will need [`Miniconda`](https://conda.io/miniconda.html) to handle extra dependencies not easily installable in UCSF Chimera, and also `git` if you are dealing with the development versions.
+2 - Download the installer from the [releases page](https://github.com/insilichem/plume/releases) (Linux only) and run it with:
 
-3 - Everything else is handled by the `install.sh` script. Just download a copy and run it:
-
-    bash install.sh
+    bash plume-*.sh
 
 
 # Usage
