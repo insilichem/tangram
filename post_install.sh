@@ -20,6 +20,7 @@ git+https://github.com/insilichem/libplume.git
 git+https://github.com/insilichem/plume_selection.git
 git+https://github.com/insilichem/plume_subalign.git
 git+https://github.com/insilichem/plume_snfg.git
+git+https://github.com/insilichem/plume_vinarelaunch.git
 " > requirements.txt;
 else
 echo "
@@ -36,6 +37,7 @@ git+https://github.com/insilichem/libplume.git
 git+https://github.com/insilichem/plume_selection.git
 git+https://github.com/insilichem/plume_subalign.git
 git+https://github.com/insilichem/plume_snfg.git
+git+https://github.com/insilichem/plume_vinarelaunch.git
 " > requirements.txt;
 fi
 
