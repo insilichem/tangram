@@ -4,13 +4,11 @@ version: {{ environ.get('GIT_DESCRIBE_TAG', 'vN/A')[1:] }}
 license_file: LICENSE
 
 channels:
-- file://{{ environ['CONDA_PREFIX'] }}/conda-bld
 - https://conda.anaconda.org/insilichem
 - https://conda.anaconda.org/omnia
 - https://conda.anaconda.org/rdkit
 - https://repo.continuum.io/pkgs/main/
 - https://repo.continuum.io/pkgs/free/
-- https://conda.anaconda.org/conda-forge     [win]
 
 conda_default_channels:
 - https://conda.anaconda.org/insilichem
@@ -23,29 +21,29 @@ ignore_duplicate_files: True
 
 specs:
 # Python std
-- python=2.7.13
+- python        =2.7.13
 - conda
 - nomkl
-- cairo=1.12.18           [linux]
-- certifi=2016.2.28
-- freetype=2.5.5
-- glib=2.50.2             [linux]
-- icu=54.1
-- libgcc=5.2.0            [linux]
-- libiconv=1.14
-- libpng=1.6.30
-- ncurses=6.0
-- numpy=1.11
-- pcre=8.39
-- pixman=0.32.6           [linux]
-- readline=6.2
-- scipy=0.19
-- setuptools=27.2.0
-- sqlite=3.13.0
-- tk=8.5.18
+- cairo         =1.12.18       [linux]
+- certifi       =2016.2.28
+- freetype      =2.5.5
+- glib          =2.50.2        [linux]
+- icu           =54.1
+- libgcc        =5.2.0         [linux]
+- libiconv      =1.14
+- libpng        =1.6.30
+- ncurses       =6.0
+- numpy         =1.11
+- pcre          =8.39
+- pixman        =0.32.6        [linux]
+- readline      =6.2
+- scipy         =0.19
+- setuptools    =27.2.0
+- sqlite        =3.13.0
+- tk            =8.5.18
 # 3rd party
 - nciplot
-- rdkit=2016
+- rdkit
 - ruamel_yaml
 # InsiliChem
 - pychimera
