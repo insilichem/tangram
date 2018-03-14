@@ -26,7 +26,6 @@ cache:
 before_cache:
 - if [[ ! $TRAVIS_TAG ]]; then rm -rf $HOME/miniconda/conda-bld; fi
 - rm -rf $HOME/miniconda/locks $HOME/miniconda/pkgs $HOME/miniconda/var $HOME/miniconda/conda-meta/history
-- rm plume-*.sh
 
 branches:
   only:
@@ -79,3 +78,6 @@ deploy:
   on:
     tags: true
     repo: insilichem/plume
+
+after_deploy:
+- rm plume-*.sh
