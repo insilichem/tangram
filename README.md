@@ -1,9 +1,12 @@
 # Plume Suite
 
-Python Layer for Unified Modular Molecular Modeling.
+Python Layer for Unified Modular Molecular Modeling: PLUMMM -> PLUM3 -> Plume.
 
-It's composed of several independent graphical interfaces and commands for UCSF Chimera.
+It's composed of several independent graphical interfaces and commands for UCSF Chimera. Each extension has its own separate repository, as detailed in the list below. As installing extensions in UCSF Chimera can be tricky, specially if external dependencies are required, We provide [Linux and MacOS installers](https://github.com/insilichem/plume/releases) to handle that for you. More details are provided below.
 
+## Plume extensions
+
+After the installation, a new menu will be available under _Tools_, called _InsiliChem_.
 
 - **Calculation setup**
 
@@ -17,9 +20,7 @@ It's composed of several independent graphical interfaces and commands for UCSF 
 
     - **[BondOrder](https://github.com/insilichem/plume_bondorder)**: Automatic bond order perception for UCSF Chimera [WIP]
 
-    - **[PlumeView](https://github.com/insilichem/gaudiview)** (formerly GAUDIView): Lighweight visualization of results coming from docking, conformational search or multiobjective optimization
-
-    - **[OrbiTraj](https://github.com/insilichem/plume_orbitraj)**: A subtle modification to UCSF Chimera's MD Movie extension to allow the visualization of volumetric data along a molecular trajectory
+    - **[GAUDIView](https://github.com/insilichem/gaudiview)**: Lighweight visualization of results coming from docking, conformational search or multiobjective optimization
 
 - **Analysis**
 
@@ -35,8 +36,13 @@ It's composed of several independent graphical interfaces and commands for UCSF 
 
     - **[SubAlign](https://github.com/insilichem/plume_subalign)**: Align two, potentially different, molecules based on partial matches of substructures
 
-- **Utilities**
-    -  **[VinaRelaunch](https://github.com/insilichem/plume_vinarelaunch)**: Resubmit failed AutoDock Vina jobs without reconfiguring the GUI.
+- **Utilities & Patches**
+
+    - **[MetalGeomDummy](https://github.com/insilichem/plume_metalgeom)**: A subtle modification to UCSF Chimera's MetalGeom extension to allow arbitrary elements to be placed at vacant positions, instead of just oxygens
+
+    - **[OrbiTraj](https://github.com/insilichem/plume_orbitraj)**: A subtle modification to UCSF Chimera's MD Movie extension to allow the visualization of volumetric data along a molecular trajectory
+
+    -  **[VinaRelaunch](https://github.com/insilichem/plume_vinarelaunch)**: Resubmit failed AutoDock Vina jobs without reconfiguring the GUI
 
 
 # Installation
@@ -52,32 +58,51 @@ It's composed of several independent graphical interfaces and commands for UCSF 
 
 # Usage
 
-Some of the extensions can run without additional dependencies, which means they will be ready to use in your normal UCSF Chimera installation. However, most complex ones require 3rd party libraries (already provided with this installer, though!). To run these tricky ones, you must activate the `conda` environment that as created during the CLI wizard. By default, it is called `insilichem`, but you might have chosen a different one. Simply, run this command in the terminal:
+Some of the extensions can run without additional dependencies, which means they will be ready to use in your normal UCSF Chimera installation. However, most complex ones require 3rd party libraries (already provided with this installer, though!). To run these tricky ones, you must activate the `conda` environment that as created during the CLI wizard. The installer will provide the needed steps, but you can also find them here (`$PREFIX` is the install location, `~/plume` by default):
 
-    source activate insilichem  # or whichever name you chose
+```
+(...)
+Done! InsiliChem Plume is now installed in your system.
 
-Then you can load a modified UCSF Chimera instance with
+Some of the extensions will work out the box, but some others will
+require two (or three) additional steps:
 
-    pychimera --gui
+0) ONLY ONCE! If you haven't used conda before, you will have to run
+   this command to enable Plume's one:
 
+    echo ". $PREFIX/etc/profile.d/conda.sh" >> ~/.bashrc
+
+1) Activate Plume environment:
+
+    conda activate $PREFIX
+
+2) Launch a patched UCSF Chimera instance with:
+
+    plume
+
+(...)
+```
 
 # Updating
 
 Each extension will check if there's a new release available every time you launch it. To update it, the installer provides you with a command that you can run with the `conda` environment already activated:
 
-    pip install -t $PREFIX -U <package name or URL>
+    plume_update <extension_name>
 
-, where `$PREFIX` is the path to your UCSF Chimera extensions directory. By default, it is set to `~/.local/insilichem/plume`, but you can check it in UCSF Chimera via `Preferences> Tools` dialog.
+For example, if you want to update gaudiview, you would write:
+
+    conda activate insilichem
+    plume_update gaudiview
 
 
 # Known issues
 
-Some extensions rely on `rdkit`, and ones on `openbabel`. However, these two don't play well together when called with `pychimera --gui`. As a result, `openbabel` was left intentionally out of the `conda` environment. If you really needed, you can uninstall rdkit and then install `openbabel`. Like this:
+Some extensions rely on `rdkit`, and ones on `openbabel`. However, these two don't play well together when called with `pychimera --gui`. As a result, `openbabel` was left intentionally out of the `conda` environment. If you really needed, you can uninstall rdkit and then install `openbabel`.
 
-    conda remove -n insilichem rdkit
-    conda install -n insilichem -c openbabel
+    conda activate insilichem
 
-To restore the default env configuration, undo those actions:
+    # Switch to openbabel
+    plume_openbabel
 
-    conda remove -n insilichem openbabel
-    conda install -n insilichem -c rdkit rdkit numpy=1.11
+    # Switch back to RDKit
+    plume_rdkit
