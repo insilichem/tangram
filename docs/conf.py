@@ -46,8 +46,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Plume Suite'
-copyright = u'2018, InsiliChem'
-author = u'InsiliChem'
+copyright = u'2018, Jaime Rodríguez-Guerra, InsiliChem'
+author = u'Jaime Rodríguez-Guerra, InsiliChem'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

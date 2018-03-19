@@ -1,24 +1,6 @@
-.. image:: docs/img/logo_plumE.png
-
-===========
-Plume Suite
-===========
-
-.. image:: https://readthedocs.org/projects/plume-suite/badge/?version=latest
-    :target: http://plume-suite.readthedocs.io/en/latest/?badge=latest
-
-.. image:: https://img.shields.io/github/release/insilichem/plume.svg
-    :target: https://github.com/insilichem/plume/releases
-
-
-**Python Layer for Unified Molecular modEling, Plume**
-
-It's composed of several independent graphical interfaces and commands for UCSF Chimera. Each extension has its own separate repository, as detailed in the list below. As installing extensions in UCSF Chimera can be tricky, specially if external dependencies are required, in this repository we provide `Linux and MacOS installers <https://github.com/insilichem/plume/releases>`_ to handle that for you. More details are provided below. The documentation will be collected here, as well.
-
-Plume extensions
-----------------
-
-After the installation, a new menu will be available under *Tools*, called *InsiliChem*.
+==============
+All extensions
+==============
 
 - **Calculation setup**
 
@@ -55,14 +37,3 @@ After the installation, a new menu will be available under *Tools*, called *Insi
     - `OrbiTraj <https://github.com/insilichem/plume_orbitraj>`_: A subtle modification to UCSF Chimera's MD Movie extension to allow the visualization of volumetric data along a molecular trajectory
 
     - `ReVina <https://github.com/insilichem/plume_vinarelaunch>`_: Resubmit failed AutoDock Vina jobs without reconfiguring the GUI
-
-
-Installation and usage
-----------------------
-
-Check the `docs <http://plume-suite.readthedocs.io/en/latest/>`_!
-
-Help and support
-----------------
-
-Feel free to `submit an issue in this repository <https://github.com/insilichem/plume/issues>`_ if you have any problems with the installation process. However, if the issue is extension-specific, please use the Issues section of the corresponding repository (links are provided in the list above)
