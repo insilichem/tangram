@@ -62,7 +62,7 @@ script:
 - conda install constructor
 - conda remove --force constructor
 - pip install -U --no-deps https://github.com/jaimergp/constructor/archive/jinja-env.zip
-- constructor .
+- constructor installer/
 
 deploy:
 - provider: releases

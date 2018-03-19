@@ -1,7 +1,7 @@
 name: plume
 company: InsiliChem
 version: {{ environ.get('GIT_DESCRIBE_TAG', 'vN/A')[1:] }}
-license_file: LICENSE
+license_file: ../LICENSE
 
 channels:
 - https://conda.anaconda.org/insilichem
