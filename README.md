@@ -1,8 +1,12 @@
 # Plume Suite
 
-Python Layer for Unified Modular Molecular Modeling: PLUMMM -> PLUM3 -> Plume.
+[![Build Status](https://travis-ci.org/insilichem/plume.svg?branch=master)](https://travis-ci.org/insilichem/plume) [![Github All Releases](https://img.shields.io/github/downloads/insilicen/plume/total.svg)](https://github.com/insilichem/plume/releases)
 
-It's composed of several independent graphical interfaces and commands for UCSF Chimera. Each extension has its own separate repository, as detailed in the list below. As installing extensions in UCSF Chimera can be tricky, specially if external dependencies are required, We provide [Linux and MacOS installers](https://github.com/insilichem/plume/releases) to handle that for you. More details are provided below.
+![Plume logo](docs/img/logo_plumE.png)
+
+**Python Layer for Unified Molecular modEling, Plume**
+
+It's composed of several independent graphical interfaces and commands for UCSF Chimera. Each extension has its own separate repository, as detailed in the list below. As installing extensions in UCSF Chimera can be tricky, specially if external dependencies are required, in this repository we provide [Linux and MacOS installers](https://github.com/insilichem/plume/releases) to handle that for you. More details are provided below. The documentation will be collected here, as well.
 
 ## Plume extensions
 
@@ -51,7 +55,7 @@ After the installation, a new menu will be available under _Tools_, called _Insi
 
     chmod +x chimera-*.bin && ./chimera-*.bin
 
-2 - Download the installer from the [releases page](https://github.com/insilichem/plume/releases) (Linux only) and run it with:
+2 - Download the latest installer from the [releases page](https://github.com/insilichem/plume/releases) (Linux and MacOS only) and run it with:
 
     bash plume-*.sh
 
