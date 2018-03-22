@@ -1,6 +1,6 @@
-==============
-All extensions
-==============
+============
+List of Tans
+============
 
 - **Calculation setup**
 
@@ -14,7 +14,7 @@ All extensions
 
     - `BondOrder <https://github.com/insilichem/tangram_bondorder>`_: Automatic bond order perception for UCSF Chimera [WIP]
 
-    - `GAUDIView <https://github.com/insilichem/gaudiview>`_: Lighweight visualization of results coming from docking, conformational search or multiobjective optimization
+    - `GAUDIView <https://github.com/insilichem/gaudiview>`_: Lightweight visualization of results coming from docking, conformational search or multiobjective optimization
 
 - **Analysis**
 
