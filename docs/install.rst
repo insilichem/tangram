@@ -1,11 +1,11 @@
-==========================
+============================
 How to install Tangram Suite
-==========================
+============================
 
 .. _installsuite:
 
 Install the full Tangram Suite (recommended)
-==========================================
+============================================
 
 1 - If you don't have UCSF Chimera installed, download the `latest stable copy <http://www.cgl.ucsf.edu/chimera/download.html>`_ and install it with:
 

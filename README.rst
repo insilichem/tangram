@@ -1,3 +1,5 @@
+.. image:: docs/img/tangram.jpg
+
 =============
 Tangram Suite
 =============

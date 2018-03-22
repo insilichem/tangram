@@ -1,5 +1,7 @@
+.. image:: img/tangram.png
+
 Welcome to Tangram Suite's documentation!
-=======================================
+=========================================
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram.svg
     :target: https://github.com/insilichem/tangram
