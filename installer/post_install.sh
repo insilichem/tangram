@@ -3,29 +3,29 @@ set -e
 PLATFORM=$(uname)
 SITEPACKAGES="${PREFIX}/lib/python2.7/site-packages"
 
-echo "installing: Plume Suite extensions with pip ..."
+echo "installing: Tangram Suite extensions with pip ..."
 cat << EOF > requirements.txt;
 git+https://github.com/insilichem/gaudiview.git
-git+https://github.com/insilichem/plume_bondorder.git
-git+https://github.com/insilichem/plume_dummyatoms.git
-git+https://github.com/insilichem/plume_cauchian.git
-git+https://github.com/insilichem/plume_nciplot.git
-git+https://github.com/insilichem/plume_openmmgui.git
-git+https://github.com/insilichem/plume_orbitraj.git
-git+https://github.com/insilichem/plume_popmusicgui.git
-git+https://github.com/insilichem/plume_propkagui.git
-git+https://github.com/insilichem/libplume.git
-git+https://github.com/insilichem/plume_selection.git
-git+https://github.com/insilichem/plume_subalign.git
-git+https://github.com/insilichem/plume_snfg.git
-git+https://github.com/insilichem/plume_vinarelaunch.git
+git+https://github.com/insilichem/tangram_bondorder.git
+git+https://github.com/insilichem/tangram_dummyatoms.git
+git+https://github.com/insilichem/tangram_cauchian.git
+git+https://github.com/insilichem/tangram_nciplot.git
+git+https://github.com/insilichem/tangram_openmmgui.git
+git+https://github.com/insilichem/tangram_orbitraj.git
+git+https://github.com/insilichem/tangram_popmusicgui.git
+git+https://github.com/insilichem/tangram_propkagui.git
+git+https://github.com/insilichem/libtangram.git
+git+https://github.com/insilichem/tangram_selection.git
+git+https://github.com/insilichem/tangram_subalign.git
+git+https://github.com/insilichem/tangram_snfg.git
+git+https://github.com/insilichem/tangram_vinarelaunch.git
 EOF
 # These are not available in Mac OS
 if (( PLATFORM == 'Linux' )); then
 cat << EOF >> requirements.txt
 # Linux only
-git+https://github.com/insilichem/plume_normalmodes.git
-git+https://github.com/insilichem/plume_plipgui.git
+git+https://github.com/insilichem/tangram_normalmodes.git
+git+https://github.com/insilichem/tangram_plipgui.git
 EOF
 "${PREFIX}/bin/pip" -q install -U --no-deps https://github.com/ssalentin/plip/archive/v1.3.3.zip
 fi
@@ -38,42 +38,43 @@ fi
 mkdir -p "$PREFIX/etc/conda/activate.d/" "$PREFIX/etc/conda/deactivate.d/"
 
 # Bash
-cat << EOF > "$PREFIX/etc/conda/activate.d/plume.sh"
+cat << EOF > "$PREFIX/etc/conda/activate.d/tangram.sh"
 #!/bin/bash
 export AMBERHOME=$PREFIX
 export NCIPLOT_HOME=$PREFIX/etc/nciplot
 EOF
-cat << "EOF" >> "$PREFIX/etc/conda/activate.d/plume.sh"
-plume (){
+cat << "EOF" >> "$PREFIX/etc/conda/activate.d/tangram.sh"
+tangram (){
     echo "
-     //////    //        //    //  //      //  ////////
-    //    //  //        //    //  ////  ////  //
-   //////    //        //    //  //  //  //  //////
-  //        //        //    //  //      //  //
- //        ////////    ////    //      //  ////////
- Plume suite -- https://github.com/insilichem/plume
+     _____  _    _   _  ____ ____      _    __  __
+    |_   _|/ \  | \ | |/ ___|  _ \    / \  |  \/  |
+      | | / _ \ |  \| | |  _| |_) |  / _ \ | |\/| |
+      | |/ ___ \| |\  | |_| |  _ <  / ___ \| |  | |
+      |_/_/   \_\_| \_|\____|_| \_\/_/   \_\_|  |_|
+
+ Tangram suite -- https://github.com/insilichem/tangram
 
  Launching UCSF Chimera via pychimera...
 "
     pychimera --gui $@
 }
-plume_update () {
+tangram_update () {
     if [[ $# -eq 0 ]] ; then
-        echo 'Usage: plume_update extension_name [extension_name2 ...]'
+        echo 'Usage: tangram_update extension_name [extension_name2 ...]'
         return 1
     fi
     for repo in "$@"; do
         pip install git+https://github.com/insilichem/${repo}.git
     done
 }
-plume_openbabel () {
+tangram_openbabel () {
     echo "Uninstalling RDKit and installing OpenBabel"
     echo "PLIP will work now, but subalign will not!"
     conda remove --force rdkit
     conda install -c openbabel openbabel
 }
 
-plume_rdkit () {
+tangram_rdkit () {
     echo "Uninstalling OpenBabel and installing RDKit"
     echo "subalign will work now, but PLIP will not!"
     conda remove --force openbabel
@@ -83,52 +84,53 @@ plume_rdkit () {
 EOF
 "EOF" > /dev/null 2>&1 || true  # fix vscode syntax recognition...
 
-cat << EOF > "$PREFIX/etc/conda/deactivate.d/plume.sh"
+cat << EOF > "$PREFIX/etc/conda/deactivate.d/tangram.sh"
 #!/bin/bash
 unset AMBERHOME
 unset NCIPLOT_HOME
-unset -f plume
-unset -f plume_update
-unset -f plume_openbabel
-unset -f plume_rdkit
+unset -f tangram
+unset -f tangram_update
+unset -f tangram_openbabel
+unset -f tangram_rdkit
 EOF
 
 # Fish
-cat << EOF > "$PREFIX/etc/conda/activate.d/plume.fish"
+cat << EOF > "$PREFIX/etc/conda/activate.d/tangram.fish"
 #!/usr/bin/fish
 set -gx AMBERHOME $PREFIX
 set -gx NCIPLOT_HOME $PREFIX/etc/nciplot
 EOF
-cat << "EOF" >> "$PREFIX/etc/conda/activate.d/plume.fish"
-function plume --description "Launches patched UCSF Chimera"
+cat << "EOF" >> "$PREFIX/etc/conda/activate.d/tangram.fish"
+function tangram --description "Launches patched UCSF Chimera"
     echo "
-     //////    //        //    //  //      //  ////////
-    //    //  //        //    //  ////  ////  //
-   //////    //        //    //  //  //  //  //////
-  //        //        //    //  //      //  //
- //        ////////    ////    //      //  ////////
- Plume suite -- https://github.com/insilichem/plume
+     _____  _    _   _  ____ ____      _    __  __
+    |_   _|/ \  | \ | |/ ___|  _ \    / \  |  \/  |
+      | | / _ \ |  \| | |  _| |_) |  / _ \ | |\/| |
+      | |/ ___ \| |\  | |_| |  _ <  / ___ \| |  | |
+      |_/_/   \_\_| \_|\____|_| \_\/_/   \_\_|  |_|
+
+ Tangram suite -- https://github.com/insilichem/tangram
 
  Launching UCSF Chimera via pychimera...
 "
     pychimera --gui $argv
 end
-function plume_update --description "Updates Plume Suite packages"
+function tangram_update --description "Updates Tangram Suite packages"
     if test (count $argv) -eq 0
-        echo 'Usage: plume_update extension_name [extension_name2 ...]'
+        echo 'Usage: tangram_update extension_name [extension_name2 ...]'
         return 1
     end
     for repo in $argv
         pip install -U git+https://github.com/insilichem/"$repo".git
     end
 end
-function plume_openbabel --description "Edit environment to use openbabel"
+function tangram_openbabel --description "Edit environment to use openbabel"
     echo "Uninstalling RDKit and installing OpenBabel"
     echo "PLIP will work now, but subalign will not!"
     conda remove --force rdkit
     conda install -c openbabel openbabel
 end
-function plume_rdkit --description "Edit environment to use rdkit"
+function tangram_rdkit --description "Edit environment to use rdkit"
     echo "Uninstalling OpenBabel and installing RDKit"
     echo "subalign will work now, but PLIP will not!"
     conda remove --force openbabel
@@ -137,14 +139,14 @@ end
 EOF
 "EOF" > /dev/null 2>&1 || true  # fix vscode syntax recognition...
 
-cat << EOF > "$PREFIX/etc/conda/deactivate.d/plume.fish"
+cat << EOF > "$PREFIX/etc/conda/deactivate.d/tangram.fish"
 #!/usr/bin/fish
 set -e AMBERHOME
 set -e NCIPLOT_HOME
-functions -e plume
-functions -e plume_update
-functions -e plume_openbabel
-functions -e plume_rdkit
+functions -e tangram
+functions -e tangram_update
+functions -e tangram_openbabel
+functions -e tangram_rdkit
 EOF
 
 echo "Registering extensions in UCSF Chimera..."
@@ -164,7 +166,7 @@ This can cause problems with most of our extensions. You can update now, but
 please notice that:
     - Upgrading NumPy will cause MMTK to stop working, which means that
       the built-in extensions relying on it (Molecular Dynamics) will not work.
-We do offer replacements for those (Plume OpenMM GUI) that offer similar
+We do offer replacements for those (Tangram OpenMM GUI) that offer similar
 functionality. And, if you ever want to use MMTK in the future, you can download
 UCSF Chimera again and make a separate, unmodified, installation.
 Do you want to upgrade UCSF Chimera's Numpy now? Answer ([y]/n): "
@@ -184,37 +186,36 @@ fi
 # SUCCESS GREETING
 cat << EOF
 -----------------------------------------------------------------------
+             _____  _    _   _  ____ ____      _    __  __
+            |_   _|/ \  | \ | |/ ___|  _ \    / \  |  \/  |
+              | | / _ \ |  \| | |  _| |_) |  / _ \ | |\/| |
+              | |/ ___ \| |\  | |_| |  _ <  / ___ \| |  | |
+              |_/_/   \_\_| \_|\____|_| \_\/_/   \_\_|  |_|
 
-            //////    //        //    //  //      //  ////////
-           //    //  //        //    //  ////  ////  //
-          //////    //        //    //  //  //  //  //////
-         //        //        //    //  //      //  //
-        //        ////////    ////    //      //  ////////
-
-  Done! InsiliChem Plume is now installed in your system.
+  Done! InsiliChem Tangram is now installed in your system.
 
   Some of the extensions will work out the box, but some others will
   require two (or three) additional steps:
 
   0) ONLY ONCE! If you haven't used conda before, you will have to run
-     this command to enable Plume's one:
+     this command to enable Tangram's one:
 
         echo ". $PREFIX/etc/profile.d/conda.sh" >> ~/.bashrc
 
-  1) Activate Plume environment:
+  1) Activate Tangram environment:
 
         conda activate $PREFIX
 
   2) Launch a patched UCSF Chimera instance with:
 
-        plume
+        tangram
 
   If you ever need to update an extension, use this command with the
-  plume environment activated:
+  tangram environment activated:
 
-        plume_update <extension>
+        tangram_update <extension>
 
-  Thanks for installing Plume <https://github.com/insilichem/plume>,
+  Thanks for installing Tangram <https://github.com/insilichem/tangram>,
   InsiliChem.
 
 -----------------------------------------------------------------------

@@ -2,11 +2,11 @@
 BondOrder
 =========
 
-.. image:: https://img.shields.io/github/release/insilichem/plume_bondorder.svg
-    :target: https://github.com/insilichem/plume_bondorder
+.. image:: https://img.shields.io/github/release/insilichem/tangram_bondorder.svg
+    :target: https://github.com/insilichem/tangram_bondorder
 
-.. image:: https://img.shields.io/github/issues/insilichem/plume_bondorder.svg
-    :target: https://github.com/insilichem/plume_bondorder/issues
+.. image:: https://img.shields.io/github/issues/insilichem/tangram_bondorder.svg
+    :target: https://github.com/insilichem/tangram_bondorder/issues
 
 Automatic bond order perception for UCSF Chimera [WIP]
 
@@ -25,6 +25,6 @@ This extension is still under development. Documentation will be ready once basi
 Requirements
 ============
 
-- ``libplume`` (*pip*-installable)
+- ``libtangram`` (*pip*-installable)
 
 .. _[Chimera-users] bond order: http://www.cgl.ucsf.edu/pipermail/chimera-users/2009-October/004403.html

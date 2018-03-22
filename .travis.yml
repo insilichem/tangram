@@ -69,15 +69,15 @@ deploy:
   api_key:
     secure: UHkVnHwnj8H48TDhIT2rdi3tfDW82c+6jukO8AyDfx/XYK6cYmyoia3hBLgi3oObkZ+CPt4MYo2drqRFe38jbyYC+ZaKOg/5XlfL7jScmdV1XG1mVQSC6KuV20m0HzI0LSK000xc11czY9yeIiMwOZZaanRLNcfef2oPm0g4uclZiwiqwYSN7yWgMEZprHt1Lo4IKQIMlNzDakSBhhyIjryoKL92UzGWNyW0IJpJY128pNAKIBJ8eAXdOQEduT/E8fkhr9whAGqnnS69PSvS1iNTLh67bXlOUQTsfRXCZowB7N+F8pmw5qfnAoyzssObSjEW9h9taExRpZRZYKJnyk2Urkfk7ED6vUsyCIw8LUi1aj1+08f7elqVBUAWVnmla8Lf/6n+6EF6TIIQKnd8jJp7iRyCK+iaSNcKcPuQ+3MlqDIHWE7WwnAypM5X/WnoDRBsrCjS6l9D+1Pp5m7IZCaGoxVmyKHCBA91SpLVwSLx2E1objjNsSuMEA4SYR/BoJg4rF14es34hTwtaFMBRdWYtyaaCQ7MDoWB9jX4VH/Iu0w+YUHQB21gBFpwEEpvaA0HNdxXhQ9T5sIY0mkwAptBHq1SPhcmjHqjehHnIgZo0YotusUUg2z6O5TZvzZYRMAsfgeBCwCoN+np4D9oPYpQMQuUvzJi0AkqyG326yM=
   file_glob: true
-  file: plume-**.sh
-  name: Plume Suite ${TRAVIS_TAG}
+  file: tangram-**.sh
+  name: Tangram Suite ${TRAVIS_TAG}
   body: ${TRAVIS_COMMIT_MESSAGE}
   draft: false
   prerelease: false
   skip_cleanup: true
   on:
     tags: true
-    repo: insilichem/plume
+    repo: insilichem/tangram
 
 after_deploy:
-- rm plume-*.sh
+- rm tangram-*.sh

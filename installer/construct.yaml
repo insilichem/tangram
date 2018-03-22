@@ -1,4 +1,4 @@
-name: plume
+name: tangram
 company: InsiliChem
 version: {{ environ.get('GIT_DESCRIBE_TAG', 'vN/A')[1:] }}
 license_file: ../LICENSE

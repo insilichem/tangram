@@ -2,16 +2,16 @@
 3D-SNFG
 =======
 
-.. image:: https://img.shields.io/github/release/insilichem/plume_snfg.svg
-    :target: https://github.com/insilichem/plume_snfg
+.. image:: https://img.shields.io/github/release/insilichem/tangram_snfg.svg
+    :target: https://github.com/insilichem/tangram_snfg
 
-.. image:: https://img.shields.io/github/issues/insilichem/plume_snfg.svg
-    :target: https://github.com/insilichem/plume_snfg/issues
+.. image:: https://img.shields.io/github/issues/insilichem/tangram_snfg.svg
+    :target: https://github.com/insilichem/tangram_snfg/issues
 
 
 Enable easy visualization of saccharydic residues.
 
-.. image:: img/plume_3dsnfg.png
+.. image:: img/tangram_3dsnfg.png
 
 
 Features
@@ -43,7 +43,7 @@ A small GUI is provided to configure the default values of the 3D symbols and so
 Requirements
 ============
 
-- ``libplume`` (*pip*-installable)
+- ``libtangram`` (*pip*-installable)
 
 No additional requirements are needed.
 

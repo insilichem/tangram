@@ -1,4 +1,4 @@
-# Plume Examples (Examplumes?)
+# Tangram Examples (Examtangrams?)
 
 ## Cauchian
 
@@ -32,7 +32,7 @@ Open 3pk2 and click Run.
 
 1. `open 1RFO`
 2. `del ~#0.1`
-3. Choose POP/POPS files from ~/.local/insilichem/plume/popmusicgui/examples
+3. Choose POP/POPS files from ~/.local/insilichem/tangram/popmusicgui/examples
 
 ## PropKa
 

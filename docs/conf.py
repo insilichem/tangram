@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Plume Suite documentation build configuration file, created by
+# Tangram Suite documentation build configuration file, created by
 # sphinx-quickstart on Mon Mar 19 12:52:04 2018.
 #
 # This file is execfile()d with the current directory set to its
@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Plume Suite'
+project = u'Tangram Suite'
 copyright = u'2018, Jaime Rodríguez-Guerra, InsiliChem'
 author = u'Jaime Rodríguez-Guerra, InsiliChem'
 
@@ -111,7 +111,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'PlumeSuitedoc'
+htmlhelp_basename = 'TangramSuitedoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -138,7 +138,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'PlumeSuite.tex', u'Plume Suite Documentation',
+    (master_doc, 'TangramSuite.tex', u'Tangram Suite Documentation',
      u'InsiliChem', 'manual'),
 ]
 
@@ -148,7 +148,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'plumesuite', u'Plume Suite Documentation',
+    (master_doc, 'tangramsuite', u'Tangram Suite Documentation',
      [author], 1)
 ]
 
@@ -159,8 +159,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'PlumeSuite', u'Plume Suite Documentation',
-     author, 'PlumeSuite', 'Python Layer for Unified Molecular modEling.',
+    (master_doc, 'TangramSuite', u'Tangram Suite Documentation',
+     author, 'TangramSuite', 'Python Layer for Unified Molecular modEling.',
      'Miscellaneous'),
 ]
 

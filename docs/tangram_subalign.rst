@@ -2,11 +2,11 @@
 SubAlign
 ========
 
-.. image:: https://img.shields.io/github/release/insilichem/plume_subalign.svg
-    :target: https://github.com/insilichem/plume_subalign
+.. image:: https://img.shields.io/github/release/insilichem/tangram_subalign.svg
+    :target: https://github.com/insilichem/tangram_subalign
 
-.. image:: https://img.shields.io/github/issues/insilichem/plume_subalign.svg
-    :target: https://github.com/insilichem/plume_subalign/issues
+.. image:: https://img.shields.io/github/issues/insilichem/tangram_subalign.svg
+    :target: https://github.com/insilichem/tangram_subalign/issues
 
 Align two, potentially different, molecules based on partial matches of substructures
 
@@ -23,7 +23,7 @@ Usage
 Requirements
 ============
 
-- ``libplume``, ``pychimera`` (*pip*-installable)
+- ``libtangram``, ``pychimera`` (*pip*-installable)
 - ``rdkit`` (*conda*-installable with ``conda install -c rdkit rdkit``)
 
 .. note::

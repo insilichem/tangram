@@ -1,10 +1,10 @@
 ==========================
-How to install Plume Suite
+How to install Tangram Suite
 ==========================
 
 .. _installsuite:
 
-Install the full Plume Suite (recommended)
+Install the full Tangram Suite (recommended)
 ==========================================
 
 1 - If you don't have UCSF Chimera installed, download the `latest stable copy <http://www.cgl.ucsf.edu/chimera/download.html>`_ and install it with:
@@ -13,11 +13,11 @@ Install the full Plume Suite (recommended)
 
     chmod +x chimera-*.bin && ./chimera-*.bin
 
-2 - Download the latest installer from the `releases page <https://github.com/insilichem/plume/releases>`_ (Linux and MacOS only) and run it with:
+2 - Download the latest installer from the `releases page <https://github.com/insilichem/tangram/releases>`_ (Linux and MacOS only) and run it with:
 
 ::
 
-    bash plume-*.sh
+    bash tangram-*.sh
 
 
 .. _update:
@@ -29,14 +29,14 @@ Each extension will check if there's a new release available every time you laun
 
 ::
 
-    plume_update <extension_name>
+    tangram_update <extension_name>
 
 For example, if you want to update *gaudiview*, you would write:
 
 ::
 
     conda activate insilichem
-    plume_update gaudiview
+    tangram_update gaudiview
 
 .. _installone:
 

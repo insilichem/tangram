@@ -2,11 +2,11 @@
 Cauchian
 ========
 
-.. image:: https://img.shields.io/github/release/insilichem/plume_cauchian.svg
-    :target: https://github.com/insilichem/plume_cauchian
+.. image:: https://img.shields.io/github/release/insilichem/tangram_cauchian.svg
+    :target: https://github.com/insilichem/tangram_cauchian
 
-.. image:: https://img.shields.io/github/issues/insilichem/plume_cauchian.svg
-    :target: https://github.com/insilichem/plume_cauchian/issues
+.. image:: https://img.shields.io/github/issues/insilichem/tangram_cauchian.svg
+    :target: https://github.com/insilichem/tangram_cauchian/issues
 
 QM and QM/MM calculations setup
 
@@ -30,6 +30,6 @@ Usage
 Requirements
 ============
 
-- ``libplume`` (*pip*-installable)
+- ``libtangram`` (*pip*-installable)
 
 .. _BSE: https://bse.pnl.gov/bse/portal

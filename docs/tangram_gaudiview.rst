@@ -30,7 +30,7 @@ Usage
 Requirements
 ============
 
-- ``libplume``, ``tkintertable``, ``pyyaml`` (*pip*-installable)
+- ``libtangram``, ``tkintertable``, ``pyyaml`` (*pip*-installable)
 
 .. _GaudiMM: http://github.com/insilichem/gaudi
 .. _GOLD: https://www.ccdc.cam.ac.uk/solutions/csd-discovery/components/gold/

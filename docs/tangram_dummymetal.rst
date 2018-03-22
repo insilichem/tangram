@@ -2,11 +2,11 @@
 DummyMetal
 ==========
 
-.. image:: https://img.shields.io/github/release/insilichem/plume_metalgeom.svg
-    :target: https://github.com/insilichem/plume_metalgeom
+.. image:: https://img.shields.io/github/release/insilichem/tangram_metalgeom.svg
+    :target: https://github.com/insilichem/tangram_metalgeom
 
-.. image:: https://img.shields.io/github/issues/insilichem/plume_metalgeom.svg
-    :target: https://github.com/insilichem/plume_metalgeom/issues
+.. image:: https://img.shields.io/github/issues/insilichem/tangram_metalgeom.svg
+    :target: https://github.com/insilichem/tangram_metalgeom/issues
 
 Apply the `Cationic Dummy Atom`_ approach to parametrize metal-containing systems using the Ambertoools suite
 
@@ -26,7 +26,7 @@ Requirements
 ============
 
 
-- ``libplume``, ``pychimera`` (*pip*-installable)
+- ``libtangram``, ``pychimera`` (*pip*-installable)
 - ``ambermini`` (*conda*-installable with ``conda install -c omnia ambermini``)
 
 .. note::
