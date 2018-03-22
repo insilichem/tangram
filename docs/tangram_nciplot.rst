@@ -1,6 +1,6 @@
-=======
-NCIPlot
-=======
+===============
+Tangram NCIPlot
+===============
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_nciplot.svg
     :target: https://github.com/insilichem/tangram_nciplot

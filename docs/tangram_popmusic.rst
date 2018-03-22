@@ -1,6 +1,6 @@
-===========
-PoPMuSiCGUI
-===========
+===================
+Tangram PoPMuSiCGUI
+===================
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_popmusicgui.svg
     :target: https://github.com/insilichem/tangram_popmusicgui

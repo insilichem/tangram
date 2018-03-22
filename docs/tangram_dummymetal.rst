@@ -1,6 +1,6 @@
-==========
-DummyMetal
-==========
+==================
+Tangram DummyMetal
+==================
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_metalgeom.svg
     :target: https://github.com/insilichem/tangram_metalgeom

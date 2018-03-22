@@ -1,6 +1,6 @@
-=======
-MMSetup
-=======
+===============
+Tangram MMSetup
+===============
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_openmmgui.svg
     :target: https://github.com/insilichem/tangram_openmmgui

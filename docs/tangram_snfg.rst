@@ -1,6 +1,6 @@
-=======
-3D-SNFG
-=======
+============
+Tangram SNFG
+============
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_snfg.svg
     :target: https://github.com/insilichem/tangram_snfg
@@ -11,7 +11,7 @@
 
 Enable easy visualization of saccharydic residues.
 
-.. image:: img/tangram_3dsnfg.png
+.. image:: img/tangram_snfg.png
 
 
 Features
@@ -43,7 +43,7 @@ A small GUI is provided to configure the default values of the 3D symbols and so
 Requirements
 ============
 
-- ``libtangram`` (*pip*-installable)
+*None*
 
 No additional requirements are needed.
 

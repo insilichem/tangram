@@ -1,6 +1,6 @@
-========
-OrbiTraj
-========
+================
+Tangram OrbiTraj
+================
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_orbitraj.svg
     :target: https://github.com/insilichem/tangram_orbitraj

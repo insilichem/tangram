@@ -1,6 +1,6 @@
-===========
-NormalModes
-===========
+===================
+Tangram NormalModes
+===================
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_normalmodes.svg
     :target: https://github.com/insilichem/tangram_normalmodes

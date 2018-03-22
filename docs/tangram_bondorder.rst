@@ -1,6 +1,6 @@
-=========
-BondOrder
-=========
+=================
+Tangram BondOrder
+=================
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_bondorder.svg
     :target: https://github.com/insilichem/tangram_bondorder

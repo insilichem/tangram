@@ -1,6 +1,6 @@
-======
-ReVina
-======
+==============
+Tangram ReVina
+==============
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_vinarelaunch.svg
     :target: https://github.com/insilichem/tangram_vinarelaunch

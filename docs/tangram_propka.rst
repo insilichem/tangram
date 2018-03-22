@@ -1,6 +1,6 @@
-=========
-PropKaGUI
-=========
+=================
+Tangram PropKaGUI
+=================
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_propkagui.svg
     :target: https://github.com/insilichem/tangram_propkagui

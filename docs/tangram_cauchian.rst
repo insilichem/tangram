@@ -1,6 +1,6 @@
-========
-Cauchian
-========
+================
+Tangram Cauchian
+================
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_cauchian.svg
     :target: https://github.com/insilichem/tangram_cauchian

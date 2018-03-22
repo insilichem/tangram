@@ -1,6 +1,6 @@
-====
-PLIP
-====
+============
+Tangram PLIP
+============
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_plipgui.svg
     :target: https://github.com/insilichem/tangram_plipgui/issues

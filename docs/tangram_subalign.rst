@@ -1,6 +1,6 @@
-========
-SubAlign
-========
+================
+Tangram SubAlign
+================
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_subalign.svg
     :target: https://github.com/insilichem/tangram_subalign
