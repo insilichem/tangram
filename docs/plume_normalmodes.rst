@@ -13,8 +13,18 @@ Perform Normal Modes Analysis and view them directly on-screen
 Features
 ========
 
+[WIP]
+
 Usage
 =====
 
+[WIP]
+
 Requirements
 ============
+
+- ``libplume``, ``prody``, ``pychimera`` (*pip*-installable)
+
+.. note::
+
+    This package might need that you launch UCSF Chimera with ``pychimera --gui``

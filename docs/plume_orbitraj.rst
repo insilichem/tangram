@@ -13,8 +13,14 @@ A subtle modification to UCSF Chimera’s MD Movie extension to allow the visual
 Features
 ========
 
+[WIP]
+
 Usage
 =====
 
+[WIP]
+
 Requirements
 ============
+
+- ``libplume`` (*pip*-installable)

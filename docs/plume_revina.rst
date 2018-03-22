@@ -13,8 +13,14 @@ Resubmit failed AutoDock Vina jobs without reconfiguring the GUI
 Features
 ========
 
+[WIP]
+
 Usage
 =====
 
+[WIP]
+
 Requirements
 ============
+
+- ``libplume`` (*pip*-installable)

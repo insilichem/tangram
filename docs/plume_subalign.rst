@@ -13,8 +13,19 @@ Align two, potentially different, molecules based on partial matches of substruc
 Features
 ========
 
+[WIP]
+
 Usage
 =====
 
+[WIP]
+
 Requirements
 ============
+
+- ``libplume``, ``pychimera`` (*pip*-installable)
+- ``rdkit`` (*conda*-installable with ``conda install -c rdkit rdkit``)
+
+.. note::
+
+    This package might need that you launch UCSF Chimera with ``pychimera --gui``

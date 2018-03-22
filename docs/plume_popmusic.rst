@@ -13,8 +13,14 @@ Depict and apply the predictions made by PoPMuSiC calculations
 Features
 ========
 
+[WIP]
+
 Usage
 =====
 
+[WIP]
+
 Requirements
 ============
+
+- ``libplume`` (*pip*-installable)

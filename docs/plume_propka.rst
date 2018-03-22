@@ -13,8 +13,15 @@ Analyze and depict the expected pKa values of protein residues with PropKa 3.1
 Features
 ========
 
+[WIP]
+
 Usage
 =====
 
+[WIP]
+
 Requirements
 ============
+
+- ``libplume`` (*pip*-installable)
+- ``PropKa-3.1`` (*pip*-installable with ``pip install https://github.com/jensengroup/propka-3.1/archive/master.zip``)

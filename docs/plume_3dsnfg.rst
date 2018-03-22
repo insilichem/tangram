@@ -43,12 +43,14 @@ A small GUI is provided to configure the default values of the 3D symbols and so
 Requirements
 ============
 
+- ``libplume`` (*pip*-installable)
+
 No additional requirements are needed.
 
 Acknowledgements
 ================
 
-This particular implementation of the SNFG nomenclature is a straight forward adaptation of the original 3D-SNFG TCL code (`3D-SNFG.tcl <http://glycam.org/3d-snfg>`_, by David F. Thieker and Jodi A. Hadden. Related publication:
+This particular implementation of the SNFG nomenclature is a straight forward adaptation of the original 3D-SNFG TCL code (3D-SNFG.tcl_, by David F. Thieker and Jodi A. Hadden. Related publication:
 
 ::
 
@@ -57,3 +59,4 @@ This particular implementation of the SNFG nomenclature is a straight forward ad
     Glycobiology, 2016
 
 
+.. _3D-SNFG.tcl: http://glycam.org/3d-snfg

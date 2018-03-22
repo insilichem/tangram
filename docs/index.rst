@@ -28,7 +28,7 @@ It's composed of several independent graphical interfaces and commands for UCSF 
    plume_cauchian.rst
    plume_dummymetal.rst
    plume_gaudiview.rst
-   plume_mm.rst
+   plume_mmsetup.rst
    plume_nciplot.rst
    plume_normalmodes.rst
    plume_orbitraj.rst

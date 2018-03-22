@@ -13,8 +13,19 @@ Depict protein-ligand interactions, as calculated with PLIP
 Features
 ========
 
+[WIP]
+
 Usage
 =====
 
+[WIP]
+
 Requirements
 ============
+
+- ``libplume``, ``pychimera`` (*pip*-installable)
+- ``openbabel`` (*conda*-installable with ``conda install -c openbabel openbabel``)
+
+.. note::
+
+    This package might need that you launch UCSF Chimera with ``pychimera --gui``
