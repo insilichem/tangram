@@ -32,7 +32,8 @@ fi
 "${PREFIX}/bin/pip" -q install -r requirements.txt \
                                --upgrade \
                                --process-dependency-links \
-                               --trusted-host download.sourceforge.net
+                               --trusted-host download.sourceforge.net \
+                               --ignore-installed
 
 # Env activation / deactivation scripts
 mkdir -p "$PREFIX/etc/conda/activate.d/" "$PREFIX/etc/conda/deactivate.d/"
