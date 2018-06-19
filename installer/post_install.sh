@@ -5,6 +5,8 @@ SITEPACKAGES="${PREFIX}/lib/python2.7/site-packages"
 
 echo "installing: Tangram Suite extensions with pip ..."
 cat << EOF > requirements.txt;
+pychimera
+ommprotocol
 git+https://github.com/insilichem/gaudiview.git
 git+https://github.com/insilichem/tangram_bondorder.git
 git+https://github.com/insilichem/tangram_dummyatoms.git
@@ -159,7 +161,7 @@ if (( exit_code > 0 )) ; then
 fi
 
 # Chimera's Numpy is old. Offer and update exposing the cons.
-NPVERSION=$(chimera --nogui --script <(echo "import numpy as np; print(np.__version__)") 2> /dev/null)
+NPVERSION=$(chimera --nogui --script <(echo "import numpy as np; print(np.__version__)") 2> /dev/null) || true
 if $(${PREFIX}/bin/python -c "from distutils.version import LooseVersion as V; print(str(V('$NPVERSION') < V('1.11')).lower())"); then
     echo -n "
 Your UCSF Chimera installation is using an old Numpy version ($NPVERSION).

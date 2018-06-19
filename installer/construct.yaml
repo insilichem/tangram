@@ -21,7 +21,7 @@ ignore_duplicate_files: True
 
 specs:
 # Python std
-- python        =2.7.14
+- python        =2.7
 - conda
 - nomkl
 - fontconfig    =2.12          [linux]
@@ -32,17 +32,23 @@ specs:
 - libiconv      =1.14
 - libpng        =1.6.30
 - ncurses       =6.0
-- numpy         =1.11
+- numpy
 - pixman        =0.32.6        [linux]
 - scipy         =0.19
-- setuptools    =27.2.0
+# - setuptools    =27.2.0
 # 3rd party
 - nciplot
 - rdkit
 - ruamel_yaml
-# InsiliChem
-- pychimera
-- ommprotocol
+- openmm
+- jinja2
+- mdtraj
+- netcdf4
+- openmoltools
+- parmed
+- pdbfixer
+
+
 
 exclude:
 - sphinx
@@ -52,6 +58,7 @@ exclude:
 - pygments
 # Use UCSF Chimera one!
 - tk
+
 
 pre_install: pre_install.sh
 post_install: post_install.sh
