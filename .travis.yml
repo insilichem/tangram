@@ -71,9 +71,9 @@ install:
 - conda config --add channels insilichem
 # Use my channel temporarily (testing)
 - conda config --add channels jaimergp
-- conda config --add channels file://$CONDA_PREFIX/conda-bld
 - conda config --add channels defaults
 - conda install -q conda conda-build
+- conda config --add channels file://$CONDA_PREFIX/conda-bld
 # Show conda info for debugging
 - conda info -a
 - conda list
@@ -92,8 +92,6 @@ script:
 
 before_deploy:
 - conda install constructor
-- conda remove --force constructor
-- pip install -U --no-deps https://github.com/jaimergp/constructor/archive/jinja-env.zip
 - constructor installer/
 - conda install -q anaconda-client
 
