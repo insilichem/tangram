@@ -88,7 +88,7 @@ install:
 - env
 
 script:
-- conda build recipes/tangram
+- conda build conda-recipe
 
 before_deploy:
 - conda install constructor
