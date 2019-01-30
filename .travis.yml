@@ -61,6 +61,7 @@ install:
 - conda config --add channels omnia
 - conda config --add channels rdkit
 - conda config --add channels insilichem
+- conda config --add channels insilichem/label/dev
 # Use my channel temporarily (testing)
 - conda config --add channels jaimergp
 - conda config --add channels defaults
