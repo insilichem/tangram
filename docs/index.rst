@@ -23,7 +23,7 @@ It's composed of several independent graphical interfaces and commands for UCSF 
    extensions.rst
    tangram_3dsnfg.rst
    tangram_bondorder.rst
-   tangram_cauchian.rst
+   tangram_qmsetup.rst
    tangram_dummymetal.rst
    tangram_gaudiview.rst
    tangram_mmsetup.rst

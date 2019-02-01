@@ -8,7 +8,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 0
+  number: {{ environ.get('GIT_DESCRIBE_NUMBER', '0')|int }}
   skip: True # [win]
 
 requirements:
@@ -23,7 +23,7 @@ requirements:
     - gaudiview               0.0.2
     - tangram_bondorder       0.0.1
     - tangram_dummyatoms      0.0.1
-    - tangram_cauchian        0.0.1
+    - tangram_qmsetup         0.0.1
     - tangram_mmsetup         0.0.1
     - tangram_nciplot         0.0.1
     - tangram_normalmodes     0.0.1
