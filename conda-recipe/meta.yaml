@@ -19,22 +19,22 @@ requirements:
     - nomkl
     # Ours
     - pychimera             >=0.2.6
-    - libtangram              0.0.2
-    - gaudiview               0.0.2
-    - tangram_bondorder       0.0.1
-    - tangram_dummyatoms      0.0.1
-    - tangram_qmsetup         0.0.1
-    - tangram_mmsetup         0.0.1
-    - tangram_nciplot         0.0.1
-    - tangram_normalmodes     0.0.1
-    - tangram_orbitraj        0.0.1
-    # - tangram_plipgui         0.0.2
-    - tangram_popmusicgui     0.0.1
-    - tangram_propkagui       0.0.1
-    - tangram_selection       0.0.1
-    - tangram_subalign        0.0.1
-    - tangram_snfg            0.0.1
-    - tangram_vinarelaunch    0.0.1
+    - libtangram              0.0.3
+    - gaudiview               0.0.3
+    - tangram_bondorder       0.0.2
+    - tangram_dummyatoms      0.0.2
+    - tangram_qmsetup         0.0.2
+    - tangram_mmsetup         0.0.2
+    - tangram_nciplot         0.0.2
+    - tangram_normalmodes     0.0.2
+    - tangram_orbitraj        0.0.2
+    # - tangram_plipgui         0.0.3
+    - tangram_popmusicgui     0.0.2
+    - tangram_propkagui       0.0.2
+    - tangram_selection       0.0.2
+    - tangram_subalign        0.0.2
+    - tangram_snfg            0.0.2
+    - tangram_vinarelaunch    0.0.2
 
 test:
   commands:
