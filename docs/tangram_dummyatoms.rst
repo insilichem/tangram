@@ -1,5 +1,5 @@
 ==================
-Tangram DummyMetal
+Tangram DummyAtoms
 ==================
 
 .. image:: https://img.shields.io/github/release/insilichem/tangram_dummyatoms.svg

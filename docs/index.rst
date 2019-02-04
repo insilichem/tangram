@@ -24,7 +24,7 @@ It's composed of several independent graphical interfaces and commands for UCSF 
    tangram_3dsnfg.rst
    tangram_bondorder.rst
    tangram_qmsetup.rst
-   tangram_dummymetal.rst
+   tangram_dummyatoms.rst
    tangram_gaudiview.rst
    tangram_mmsetup.rst
    tangram_nciplot.rst

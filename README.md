@@ -59,10 +59,6 @@ called *InsiliChem*.
 
 -   **Utilities & Patches**
 
-    > -   [DummyMetal](https://github.com/insilichem/tangram_metalgeom):
-    >     A subtle modification to UCSF Chimera\'s MetalGeom extension
-    >     to allow arbitrary elements to be placed at vacant positions,
-    >     instead of just oxygens
     > -   [OrbiTraj](https://github.com/insilichem/tangram_orbitraj): A
     >     subtle modification to UCSF Chimera\'s MD Movie extension to
     >     allow the visualization of volumetric data along a molecular
