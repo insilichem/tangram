@@ -79,8 +79,7 @@ Check the [docs](http://tangram-suite.readthedocs.io/en/latest/)!
 Help and support
 ----------------
 
-Feel free to [submit an issue in this
-repository](https://github.com/insilichem/tangram/issues) if you have
+Feel free to [submit an issue in this repository](https://github.com/insilichem/tangram/issues) if you have
 any problems with the installation process. However, if the issue is
 extension-specific, please use the Issues section of the corresponding
 repository (links are provided in the list above).
