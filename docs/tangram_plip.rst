@@ -10,6 +10,10 @@ Tangram PLIP
 
 Depict protein-ligand interactions, as calculated with PLIP
 
+.. note::
+
+    This package is not currently compatible with the Tangram suite. It can be installed separately, though.
+
 Features
 ========
 
@@ -25,6 +29,10 @@ Requirements
 
 - ``libtangram``, ``pychimera`` (*pip*-installable)
 - ``openbabel`` (*conda*-installable with ``conda install -c openbabel openbabel``)
+
+::
+
+    conda install -c insilichem -c openbabel -c plip tangram_plip
 
 .. note::
 

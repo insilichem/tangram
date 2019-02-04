@@ -32,4 +32,8 @@ Requirements
 
 - ``libtangram`` (*pip*-installable)
 
+.. note::
+
+    conda install -c insilichem tangram_qmsetup
+
 .. _BSE: https://bse.pnl.gov/bse/portal

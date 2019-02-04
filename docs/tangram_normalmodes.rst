@@ -23,7 +23,11 @@ Usage
 Requirements
 ============
 
-- ``libtangram``, ``prody``, ``pychimera`` (*pip*-installable)
+- ``libtangram``, ``prody``, ``pychimera``
+
+::
+
+    conda install -c insilichem tangram_normalmodes
 
 .. note::
 

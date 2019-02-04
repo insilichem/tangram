@@ -23,8 +23,12 @@ Usage
 Requirements
 ============
 
-- ``libtangram``, ``pychimera`` (*pip*-installable)
-- ``rdkit`` (*conda*-installable with ``conda install -c rdkit rdkit``)
+- ``libtangram``, ``pychimera``
+- ``rdkit``
+
+.. note::
+
+    conda install -c insilichem -c rdkit tangram_rdkit
 
 .. note::
 

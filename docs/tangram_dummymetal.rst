@@ -2,11 +2,11 @@
 Tangram DummyMetal
 ==================
 
-.. image:: https://img.shields.io/github/release/insilichem/tangram_metalgeom.svg
-    :target: https://github.com/insilichem/tangram_metalgeom
+.. image:: https://img.shields.io/github/release/insilichem/tangram_dummyatoms.svg
+    :target: https://github.com/insilichem/tangram_dummyatoms
 
-.. image:: https://img.shields.io/github/issues/insilichem/tangram_metalgeom.svg
-    :target: https://github.com/insilichem/tangram_metalgeom/issues
+.. image:: https://img.shields.io/github/issues/insilichem/tangram_dummyatoms.svg
+    :target: https://github.com/insilichem/tangram_dummyatoms/issues
 
 Apply the `Cationic Dummy Atom`_ approach to parametrize metal-containing systems using the Ambertoools suite
 
@@ -26,8 +26,12 @@ Requirements
 ============
 
 
-- ``libtangram``, ``pychimera`` (*pip*-installable)
-- ``ambermini`` (*conda*-installable with ``conda install -c omnia ambermini``)
+- ``libtangram``, ``pychimera``
+- ``ambermini``
+
+::
+
+    conda install -c insilichem -c rdkit -c omnia tangram_dummyatoms
 
 .. note::
 

@@ -43,9 +43,11 @@ A small GUI is provided to configure the default values of the 3D symbols and so
 Requirements
 ============
 
-*None*
+- ``libtangram``
 
-No additional requirements are needed.
+.. note::
+
+    conda install -c insilichem tangram_snfg
 
 Acknowledgements
 ================

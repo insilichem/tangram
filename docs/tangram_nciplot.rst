@@ -23,9 +23,13 @@ Usage
 Requirements
 ============
 
-- ``libtangram``, ``pychimera`` (*pip*-installable)
-- ``nciplot`` (*conda*-installable with ``conda install -c insilichem nciplot``)
-- Optional: ``cunci`` (*conda*-installable with ``conda install -c insilichem cunci``), a CUDA-ready implementation of NCIPlot that runs faster.
+- ``libtangram``, ``pychimera``
+- ``nciplot``
+- Optional: ``cunci``, a CUDA-ready implementation of NCIPlot that runs faster.
+
+::
+
+    conda install -c insilichem -c tangram_nciplot
 
 .. note::
 

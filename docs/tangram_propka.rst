@@ -23,5 +23,9 @@ Usage
 Requirements
 ============
 
-- ``libtangram`` (*pip*-installable)
-- ``PropKa-3.1`` (*pip*-installable with ``pip install https://github.com/jensengroup/propka-3.1/archive/master.zip``)
+- ``libtangram``
+- ``PropKa-3.1``
+
+.. note::
+
+    conda install -c insilichem tangram_propkagui

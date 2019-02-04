@@ -30,7 +30,11 @@ Usage
 Requirements
 ============
 
-- ``libtangram``, ``tkintertable``, ``pyyaml`` (*pip*-installable)
+- ``libtangram``, ``tkintertable``, ``pyyaml``
+
+::
+
+    conda install -c insilichem tangram_bondorder
 
 .. _GaudiMM: http://github.com/insilichem/gaudi
 .. _GOLD: https://www.ccdc.cam.ac.uk/solutions/csd-discovery/components/gold/

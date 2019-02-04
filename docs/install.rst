@@ -22,6 +22,15 @@ Install the full Tangram Suite (recommended)
 
 .. _update:
 
+Using the conda meta-package
+============================
+
+Instead of using the Bash installer, you can use conda (if you are already using it) to create a new environment with the ``tangram`` metapackage, which will handle all the dependencies:
+
+::
+
+    conda create -n tangram -c insilichem -c conda-forge -c omnia -c rdkit tangram
+
 Updating extensions
 ===================
 
@@ -29,14 +38,18 @@ Each extension will check if there's a new release available every time you laun
 
 ::
 
-    tangram_update <extension_name>
+    conda update -c insilichem [-c additional channels] <extension_name>
+
+.. note:
+
+    More ``-c`` flags might be needed, depending on the requirements. Check each extension documentation page to see the needed conda channels.
 
 For example, if you want to update *gaudiview*, you would write:
 
 ::
 
     conda activate insilichem
-    tangram_update gaudiview
+    conda update -c insilichem gaudiview
 
 .. _installone:
 
@@ -45,22 +58,19 @@ Install only one specific extension
 
 (Advanced users only)
 
-Installing separate extension is not recommended but can be done. Each extension is a separate Python package, which additionally can require ``pip`` and/or ``conda`` dependencies. Since ``pip`` dependencies are programmatically specified in ``setup.py``, they will be handled when you run
+Installing separate extension is not recommended but can be done.
 
 ::
 
-    pip install <repository URL>
+    conda install -c insilichem <package name>
+
+.. note:
+
+    More ``-c`` flags might be needed, depending on the requirements. Check each extension documentation page to see the needed conda channels.
 
 
-By default, ``pip`` will install the packages to the default location (available with ``pip --version``), but you can point to a different one with ``pip install -t my/custom/location/ <repository URL>``.
+Once completed, tell UCSF Chimera to look for new extensions in the chosen environment. To do that, open UCSF Chimera and go to ``Favorites> Add to Favorites/Toolbar``. In the newly opened dialog, specify the env location in the bottom box. In this case, the extensions location will be something like ``$CONDA_PREFIX/lib/python2.7/site-packages``.
 
-Write down the chosen location and, once completed, tell UCSF Chimera to look for new extensions in the chosen environment. To do that, open UCSF Chimera and go to ``Favorites> Add to Favorites/Toolbar``. In the newly opened dialog, specify the chosen location in the bottom box.
+.. note::
 
-
-If ``conda`` requirements are needed (Miniconda installers are available `here <https://conda.io/miniconda.html>`_, you will have to provide those by running
-
-::
-
-    conda install <package> [<package2> ...]
-
-In this case, the extensions location will be something like ``$CONDA_PREFIX/lib/python2.7/site-packages``. The conda environment will always require ``pychimera`` to inject the conda dependencies.
+    The conda environment will always require ``pychimera`` to inject the conda dependencies.

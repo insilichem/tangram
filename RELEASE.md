@@ -12,9 +12,24 @@ To make a new release for each tan, in each platform:
 3. Build with the corresponding `conda build` command (written in `conda-recipe/meta.yml` for each repo).
 4. `anaconda upload -u insilichem path/to/tangram_package.tar.bz2`.
 
+Assuming that all `tangram_*` repos are cloned in the current working directory, for step 1, a script like this could help (for `fish`):
+
+```
+for d in tangram_*
+    cd $d
+    echo $d
+    set ncommits (git log (git describe --tags --abbrev=0)..HEAD --oneline | wc -l)
+    if test $ncommits -gt 0
+        echo "Creating new tag..."
+        git tag vX.Y.Z # replace with proper value!
+    end
+    cd ..
+end
+```
+
 Then for the `tangram` metapackage:
 
-1. Update the version of the recently updated tan.
+1. Update the pinned version of the recently updated tan.
 2. Manually modify `installer/construct.yml` to reflect the new version (`constructor` does not support `GIT_DESCRIBE_*` variables yet).
 3. Commit the changes.
 4. Tag the repository with a new version.
