@@ -24,7 +24,7 @@ called *InsiliChem*.
 
 -   **Calculation setup**
 
-    > -   [MMSetup](https://github.com/insilichem/tangram_openmmgui):
+    > -   [MMSetup](https://github.com/insilichem/tangram_mmsetup):
     >     Setup MD calculations with OpenMM and ommprotocol \[WIP\]
     > -   [QMSetup](https://github.com/insilichem/tangram_qmsetup): QM
     >     and QM/MM calculations setup
