@@ -76,7 +76,7 @@ install:
 - git clone https://github.com/insilichem/pychimera;
   cd pychimera;
   git checkout clean-recipe;
-  conda build -q --python=2.7 conda-recipes/pychimera --no-test;
+  conda build -q --python=2.7 conda-recipe --no-test;
   cd ..;
 - env
 
