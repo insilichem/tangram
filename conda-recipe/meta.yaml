@@ -37,10 +37,16 @@ requirements:
     - tangram_vinarelaunch    0.0.2
 
 test:
+  requires:
+    - jupyter
+    - notebook
+    - ipython
   commands:
     - pychimera --help
     - pychimera --path
     - pychimera -c "import chimera"
+    - pychimera ipython --help
+    - pychimera notebook --help
 
 about:
   home: http://github.com/insilichem/tangram
