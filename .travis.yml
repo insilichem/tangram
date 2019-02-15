@@ -23,7 +23,7 @@ branches:
 
 before_install:
 # Get Chimera
-- wget https://raw.githubusercontent.com/insilichem/pychimera/clean-recipe/scripts/install_chimera.sh
+- wget https://raw.githubusercontent.com/insilichem/pychimera/master/scripts/install_chimera.sh
 - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
     if [[ ! -e $HOME/chimera/bin/chimera ]]; then
       bash install_chimera.sh;
@@ -61,24 +61,13 @@ install:
 - conda config --add channels omnia
 - conda config --add channels rdkit
 - conda config --add channels insilichem
-- conda config --add channels insilichem/label/dev
-# Use my channel temporarily (testing)
-- conda config --add channels jaimergp
 - conda config --add channels defaults
 - conda install -q conda conda-build
 - conda config --add channels file://$CONDA_PREFIX/conda-bld
 # Show conda info for debugging
 - conda info -a
 - conda list
-# Get Chimera
-
-# While we modernize pychimera, tangram and gaudi recipes, use pychimera PR#13 builds
-- git clone https://github.com/insilichem/pychimera;
-  cd pychimera;
-  git checkout clean-recipe;
-  conda build -q --python=2.7 conda-recipe --no-test;
-  cd ..;
-- env
+- env | sort
 
 script:
 - conda build conda-recipe
