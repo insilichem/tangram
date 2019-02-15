@@ -25,11 +25,11 @@ Install the full Tangram Suite (recommended)
 Using the conda meta-package
 ============================
 
-Instead of using the Bash installer, you can use conda (if you are already using it) to create a new environment with the ``tangram`` metapackage, which will handle all the dependencies:
+Instead of using the Bash installer, you can use conda (if you are already using it) to create a new environment with the ``tangram`` metapackage, which will handle all the dependencies. While in alpha, both ``insilichem`` channels are needed (the main one and also the `dev` label):
 
 ::
 
-    conda create -n tangram -c insilichem -c conda-forge -c omnia -c rdkit tangram
+    conda create -n tangram -c insilichem/label/dev -c insilichem -c conda-forge -c omnia -c rdkit tangram
 
 Updating extensions
 ===================
@@ -38,9 +38,9 @@ Each extension will check if there's a new release available every time you laun
 
 ::
 
-    conda update -c insilichem [-c additional channels] <extension_name>
+    conda update -c insilichem/label/dev -c insilichem [-c additional channels] <extension_name>
 
-.. note:
+.. note::
 
     More ``-c`` flags might be needed, depending on the requirements. Check each extension documentation page to see the needed conda channels.
 
@@ -49,7 +49,8 @@ For example, if you want to update *gaudiview*, you would write:
 ::
 
     conda activate insilichem
-    conda update -c insilichem gaudiview
+    conda update -c insilichem/label/dev -c insilichem gaudiview
+
 
 .. _installone:
 
