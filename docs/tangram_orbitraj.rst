@@ -24,3 +24,7 @@ Requirements
 ============
 
 - ``libtangram`` (*pip*-installable)
+
+::
+
+    conda install -c insilichem tangram_orbitraj

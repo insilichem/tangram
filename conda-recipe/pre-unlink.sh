@@ -1,0 +1,1 @@
+chimera --nogui --script <(echo "import chimera; chimera.extension.manager.directories.remove(\"${PREFIX}/lib/python2.7/site-packages\"); chimera.preferences.makeCurrentSaved(\"Tools\"); chimera.preferences.save();") >> "$PREFIX/.messages.txt"

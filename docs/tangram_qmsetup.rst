@@ -1,12 +1,12 @@
 ================
-Tangram Cauchian
+Tangram QMSetup
 ================
 
-.. image:: https://img.shields.io/github/release/insilichem/tangram_cauchian.svg
-    :target: https://github.com/insilichem/tangram_cauchian
+.. image:: https://img.shields.io/github/release/insilichem/tangram_qmsetup.svg
+    :target: https://github.com/insilichem/tangram_qmsetup
 
-.. image:: https://img.shields.io/github/issues/insilichem/tangram_cauchian.svg
-    :target: https://github.com/insilichem/tangram_cauchian/issues
+.. image:: https://img.shields.io/github/issues/insilichem/tangram_qmsetup.svg
+    :target: https://github.com/insilichem/tangram_qmsetup/issues
 
 QM and QM/MM calculations setup
 
@@ -31,5 +31,9 @@ Requirements
 ============
 
 - ``libtangram`` (*pip*-installable)
+
+.. note::
+
+    conda install -c insilichem tangram_qmsetup
 
 .. _BSE: https://bse.pnl.gov/bse/portal

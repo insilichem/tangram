@@ -1,19 +1,12 @@
-# Derived from https://github.com/theochem/qcgrids/blob/master/.travis.yml
 env:
   matrix:
   - MYCONDAPY=2.7
-
-####
-# EVERYTHING BELOW THIS LINE WILL BE COPIED INTO OTHER YMLs
-####
 
 # Do not use Travis Python to save some time.
 language: generic
 os:
 - linux
 - osx
-osx_image: xcode6.4
-dist: trusty
 sudo: false
 
 matrix:
@@ -21,22 +14,32 @@ matrix:
 
 cache:
   directories:
-  - $HOME/miniconda
-
-before_cache:
-- if [[ ! $TRAVIS_TAG ]]; then rm -rf $HOME/miniconda/conda-bld; fi
-- rm -rf $HOME/miniconda/locks $HOME/miniconda/pkgs $HOME/miniconda/var $HOME/miniconda/conda-meta/history
+  - $HOME/chimera
 
 branches:
   only:
+  - master
   - /^v[0-9]+\.[0-9]+(\.[0-9]+)?([abc][0-9]*)?$/  # release branches
 
 before_install:
+# Get Chimera
+- wget https://raw.githubusercontent.com/insilichem/pychimera/clean-recipe/scripts/install_chimera.sh
+- if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+    if [[ ! -e $HOME/chimera/bin/chimera ]]; then
+      bash install_chimera.sh;
+    fi;
+    export CHIMERADIR="$HOME/chimera";
+  else
+    if [[ ! -e $HOME/chimera/Chimera.app/Contents/Resources/bin/chimera ]]; then
+      bash install_chimera.sh;
+    fi;
+    export CHIMERADIR="$HOME/chimera/Chimera.app/Contents/Resources";
+  fi
 # Get miniconda. Take the right version, so re-installing python is hopefully not needed.
 - if test -e $HOME/miniconda/bin; then
-    echo "Miniconda already installed!";
+    echo "miniconda already installed.";
   else
-    echo "Installing miniconda...";
+    echo "Installing miniconda.";
     rm -rf $HOME/miniconda;
     mkdir -p $HOME/download;
     if [[ -d $HOME/download/miniconda.sh ]]; then rm -rf $HOME/download/miniconda.sh; fi;
@@ -47,37 +50,65 @@ before_install:
     fi;
     bash $HOME/download/miniconda.sh -b -p $HOME/miniconda;
   fi
+
+install:
 # Configure conda and get a few essentials
 - source $HOME/miniconda/etc/profile.d/conda.sh
 - conda activate
 - conda config --set always_yes yes
-
-install:
-- conda install -q conda conda-build constructor
+- conda config --remove-key channels || true
+- conda config --add channels conda-forge
+- conda config --add channels omnia
+- conda config --add channels rdkit
+- conda config --add channels insilichem
+- conda config --add channels insilichem/label/dev
+# Use my channel temporarily (testing)
+- conda config --add channels jaimergp
+- conda config --add channels defaults
+- conda install -q conda conda-build
+- conda config --add channels file://$CONDA_PREFIX/conda-bld
 # Show conda info for debugging
 - conda info -a
 - conda list
+# Get Chimera
+
+# While we modernize pychimera, tangram and gaudi recipes, use pychimera PR#13 builds
+- git clone https://github.com/insilichem/pychimera;
+  cd pychimera;
+  git checkout clean-recipe;
+  conda build -q --python=2.7 conda-recipe --no-test;
+  cd ..;
+- env
 
 script:
+- conda build conda-recipe
+
+before_deploy:
 - conda install constructor
-- conda remove --force constructor
-- pip install -U --no-deps https://github.com/jaimergp/constructor/archive/jinja-env.zip
 - constructor installer/
+- conda install -q anaconda-client
 
 deploy:
-- provider: releases
-  api_key:
-    secure: UHkVnHwnj8H48TDhIT2rdi3tfDW82c+6jukO8AyDfx/XYK6cYmyoia3hBLgi3oObkZ+CPt4MYo2drqRFe38jbyYC+ZaKOg/5XlfL7jScmdV1XG1mVQSC6KuV20m0HzI0LSK000xc11czY9yeIiMwOZZaanRLNcfef2oPm0g4uclZiwiqwYSN7yWgMEZprHt1Lo4IKQIMlNzDakSBhhyIjryoKL92UzGWNyW0IJpJY128pNAKIBJ8eAXdOQEduT/E8fkhr9whAGqnnS69PSvS1iNTLh67bXlOUQTsfRXCZowB7N+F8pmw5qfnAoyzssObSjEW9h9taExRpZRZYKJnyk2Urkfk7ED6vUsyCIw8LUi1aj1+08f7elqVBUAWVnmla8Lf/6n+6EF6TIIQKnd8jJp7iRyCK+iaSNcKcPuQ+3MlqDIHWE7WwnAypM5X/WnoDRBsrCjS6l9D+1Pp5m7IZCaGoxVmyKHCBA91SpLVwSLx2E1objjNsSuMEA4SYR/BoJg4rF14es34hTwtaFMBRdWYtyaaCQ7MDoWB9jX4VH/Iu0w+YUHQB21gBFpwEEpvaA0HNdxXhQ9T5sIY0mkwAptBHq1SPhcmjHqjehHnIgZo0YotusUUg2z6O5TZvzZYRMAsfgeBCwCoN+np4D9oPYpQMQuUvzJi0AkqyG326yM=
-  file_glob: true
-  file: tangram-**.sh
-  name: Tangram Suite ${TRAVIS_TAG}
-  body: ${TRAVIS_COMMIT_MESSAGE}
-  draft: false
-  prerelease: false
-  skip_cleanup: true
-  on:
-    tags: true
-    repo: insilichem/tangram
+  # Deploy to Anaconda.org
+  - provider: script
+    script: anaconda -t $ANACONDA_TOKEN upload -u insilichem $HOME/miniconda/conda-bld/**/tangram*.tar.bz2
+    skip_cleanup: true
+    on:
+      tags: true
+      repo: insilichem/tangram
+  - provider: releases
+    api_key:
+      secure: UHkVnHwnj8H48TDhIT2rdi3tfDW82c+6jukO8AyDfx/XYK6cYmyoia3hBLgi3oObkZ+CPt4MYo2drqRFe38jbyYC+ZaKOg/5XlfL7jScmdV1XG1mVQSC6KuV20m0HzI0LSK000xc11czY9yeIiMwOZZaanRLNcfef2oPm0g4uclZiwiqwYSN7yWgMEZprHt1Lo4IKQIMlNzDakSBhhyIjryoKL92UzGWNyW0IJpJY128pNAKIBJ8eAXdOQEduT/E8fkhr9whAGqnnS69PSvS1iNTLh67bXlOUQTsfRXCZowB7N+F8pmw5qfnAoyzssObSjEW9h9taExRpZRZYKJnyk2Urkfk7ED6vUsyCIw8LUi1aj1+08f7elqVBUAWVnmla8Lf/6n+6EF6TIIQKnd8jJp7iRyCK+iaSNcKcPuQ+3MlqDIHWE7WwnAypM5X/WnoDRBsrCjS6l9D+1Pp5m7IZCaGoxVmyKHCBA91SpLVwSLx2E1objjNsSuMEA4SYR/BoJg4rF14es34hTwtaFMBRdWYtyaaCQ7MDoWB9jX4VH/Iu0w+YUHQB21gBFpwEEpvaA0HNdxXhQ9T5sIY0mkwAptBHq1SPhcmjHqjehHnIgZo0YotusUUg2z6O5TZvzZYRMAsfgeBCwCoN+np4D9oPYpQMQuUvzJi0AkqyG326yM=
+    file_glob: true
+    file: tangram-**.sh
+    name: Tangram Suite ${TRAVIS_TAG}
+    body: ${TRAVIS_COMMIT_MESSAGE}
+    draft: false
+    prerelease: false
+    skip_cleanup: true
+    on:
+      tags: true
+      repo: insilichem/tangram
 
 after_deploy:
 - rm tangram-*.sh

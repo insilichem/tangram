@@ -1,4 +1,6 @@
-===================
+===================.. note::
+
+    conda install -c insilichem tangram_popmusicgui
 Tangram PoPMuSiCGUI
 ===================
 
@@ -24,3 +26,7 @@ Requirements
 ============
 
 - ``libtangram`` (*pip*-installable)
+
+.. note::
+
+    conda install -c insilichem tangram_popmusicgui

@@ -25,6 +25,12 @@ This extension is still under development. Documentation will be ready once basi
 Requirements
 ============
 
-- ``libtangram`` (*pip*-installable)
+- ``libtangram``
+- ``rdkit``
+- ``ambermini``
+
+::
+
+    conda install -c insilichem -c rdkit -c omnia tangram_bondorder
 
 .. _[Chimera-users] bond order: http://www.cgl.ucsf.edu/pipermail/chimera-users/2009-October/004403.html

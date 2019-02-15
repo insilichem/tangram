@@ -23,8 +23,12 @@ Usage
 Requirements
 ============
 
-- ``libtangram``, ``pychimera`` (*pip*-installable)
-- ``ommprotocol`` (*conda*-installable with ``conda install -c omnia -c insilichem ommprotocol``)
+- ``libtangram``, ``pychimera``
+- ``ommprotocol``
+
+::
+
+    conda install -c insilichem -c omnia tangram_mmsetup
 
 .. note::
 

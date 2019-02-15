@@ -1,0 +1,63 @@
+# Build with:
+# conda build --python=2.7 -c local -c insilichem -c omnia -c rdkit .
+{% set name = "tangram" %}
+{% set version = "0.0.7" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+build:
+  number: {{ environ.get('GIT_DESCRIBE_NUMBER', '0')|int }}
+  skip: True # [win]
+
+requirements:
+  host:
+    - python                  2.7.*
+  run:
+    - python                  2.7.*
+    - nomkl
+    # Ours
+    - pychimera             >=0.2.6
+    - libtangram              0.0.3
+    - gaudiview               0.0.3
+    - tangram_bondorder       0.0.2
+    - tangram_dummyatoms      0.0.2
+    - tangram_qmsetup         0.0.2
+    - tangram_mmsetup         0.0.2
+    - tangram_nciplot         0.0.2
+    - tangram_normalmodes     0.0.2
+    - tangram_orbitraj        0.0.2
+    # - tangram_plipgui         0.0.3
+    - tangram_popmusicgui     0.0.2
+    - tangram_propkagui       0.0.2
+    - tangram_selection       0.0.2
+    - tangram_subalign        0.0.2
+    - tangram_snfg            0.0.2
+    - tangram_vinarelaunch    0.0.2
+
+test:
+  requires:
+    - jupyter
+    - notebook
+    - ipython
+  commands:
+    - pychimera --help
+    - pychimera --path
+    - pychimera -c "import chimera"
+    - pychimera ipython --help
+    - pychimera notebook --help
+
+about:
+  home: http://github.com/insilichem/tangram
+  license: MIT
+  license_family: MIT
+
+  summary: 'A collection of molecular modelling tools for UCSF Chimera'
+
+  description: |
+    A collection of molecular modelling tools for UCSF Chimera
+  doc_url: http://tangram-suite.readthedocs.io/
+  dev_url: https://github.com/insilichem/tangram
+
+

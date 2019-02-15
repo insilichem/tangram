@@ -1,6 +1,6 @@
 # Tangram Examples (Examtangrams?)
 
-## Cauchian
+## QMSetup
 
 Open any molecule and click Preview.
 

@@ -24,9 +24,9 @@ called *InsiliChem*.
 
 -   **Calculation setup**
 
-    > -   [MMSetup](https://github.com/insilichem/tangram_openmmgui):
+    > -   [MMSetup](https://github.com/insilichem/tangram_mmsetup):
     >     Setup MD calculations with OpenMM and ommprotocol \[WIP\]
-    > -   [Cauchian](https://github.com/insilichem/tangram_cauchian): QM
+    > -   [QMSetup](https://github.com/insilichem/tangram_qmsetup): QM
     >     and QM/MM calculations setup
 
 -   **Visualization**
@@ -59,10 +59,6 @@ called *InsiliChem*.
 
 -   **Utilities & Patches**
 
-    > -   [DummyMetal](https://github.com/insilichem/tangram_metalgeom):
-    >     A subtle modification to UCSF Chimera\'s MetalGeom extension
-    >     to allow arbitrary elements to be placed at vacant positions,
-    >     instead of just oxygens
     > -   [OrbiTraj](https://github.com/insilichem/tangram_orbitraj): A
     >     subtle modification to UCSF Chimera\'s MD Movie extension to
     >     allow the visualization of volumetric data along a molecular
@@ -79,8 +75,7 @@ Check the [docs](http://tangram-suite.readthedocs.io/en/latest/)!
 Help and support
 ----------------
 
-Feel free to [submit an issue in this
-repository](https://github.com/insilichem/tangram/issues) if you have
+Feel free to [submit an issue in this repository](https://github.com/insilichem/tangram/issues) if you have
 any problems with the installation process. However, if the issue is
 extension-specific, please use the Issues section of the corresponding
 repository (links are provided in the list above).

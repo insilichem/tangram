@@ -1,12 +1,14 @@
 name: tangram
 company: InsiliChem
-version: {{ environ.get('GIT_DESCRIBE_TAG', 'vN/A')[1:] }}
+version: 0.0.7
 license_file: ../LICENSE
 
 channels:
+- file:///home/travis/miniconda/conda-bld
 - https://conda.anaconda.org/insilichem
 - https://conda.anaconda.org/omnia
 - https://conda.anaconda.org/rdkit
+- https://conda.anaconda.org/conda-forge
 - https://repo.continuum.io/pkgs/main/
 - https://repo.continuum.io/pkgs/free/
 
@@ -14,51 +16,21 @@ conda_default_channels:
 - https://conda.anaconda.org/insilichem
 - https://conda.anaconda.org/omnia
 - https://conda.anaconda.org/rdkit
+- https://conda.anaconda.org/conda-forge
 - https://repo.continuum.io/pkgs/main/
 - https://repo.continuum.io/pkgs/free/
 
 ignore_duplicate_files: True
 
 specs:
-# Python std
-- python        =2.7
 - conda
-- nomkl
-- fontconfig    =2.12          [linux]
-- freetype      =2.5.5
-- glib          =2.50.2        [linux]
-- icu           =54.1
-- libgcc        =5.2.0         [linux]
-- libiconv      =1.14
-- libpng        =1.6.30
-- ncurses       =6.0
-- numpy
-- pixman        =0.32.6        [linux]
-- scipy         =0.19
-# - setuptools    =27.2.0
-# 3rd party
-- nciplot
-- rdkit
-- ruamel_yaml
-- openmm
-- jinja2
-- mdtraj
-- netcdf4
-- openmoltools
-- parmed
-- pdbfixer
-
-
+- tangram
 
 exclude:
 - sphinx
-- sphinxcontrib
-- sphinxcontrib-websupport
 - alabaster
 - pygments
 # Use UCSF Chimera one!
 - tk
 
-
 pre_install: pre_install.sh
-post_install: post_install.sh

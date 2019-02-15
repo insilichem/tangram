@@ -6,7 +6,7 @@ List of Tans
 
     - `MMSetup <https://github.com/insilichem/tangram_openmmgui>`_: Setup MD calculations with OpenMM and ommprotocol [WIP]
 
-    - `Cauchian <https://github.com/insilichem/tangram_cauchian>`_: QM and QM/MM calculations setup
+    - `QMSetup <https://github.com/insilichem/tangram_qmsetup>`_: QM and QM/MM calculations setup
 
 - **Visualization**
 

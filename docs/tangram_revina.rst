@@ -24,3 +24,7 @@ Requirements
 ============
 
 - ``libtangram`` (*pip*-installable)
+
+.. note::
+
+    conda install -c insilichem tangram_vinarelaunch

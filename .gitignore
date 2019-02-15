@@ -68,3 +68,6 @@ _build/
 
 # PyTest Benchmarks
 /.benchmarks
+
+# Constructor artifacts
+tangram-*.sh
