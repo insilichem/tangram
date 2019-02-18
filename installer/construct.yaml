@@ -4,7 +4,8 @@ version: 0.0.7
 license_file: ../LICENSE
 
 channels:
-- file:///home/travis/miniconda/conda-bld
+- file:///home/travis/miniconda/conda-bld  # [linux]
+- file:///Users/travis/miniconda/conda-bld  # [osx]
 - https://conda.anaconda.org/insilichem
 - https://conda.anaconda.org/insilichem/label/dev
 - https://conda.anaconda.org/omnia
