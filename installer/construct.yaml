@@ -6,6 +6,7 @@ license_file: ../LICENSE
 channels:
 - file:///home/travis/miniconda/conda-bld
 - https://conda.anaconda.org/insilichem
+- https://conda.anaconda.org/insilichem/label/dev
 - https://conda.anaconda.org/omnia
 - https://conda.anaconda.org/rdkit
 - https://conda.anaconda.org/conda-forge
@@ -14,6 +15,7 @@ channels:
 
 conda_default_channels:
 - https://conda.anaconda.org/insilichem
+- https://conda.anaconda.org/insilichem/label/dev
 - https://conda.anaconda.org/omnia
 - https://conda.anaconda.org/rdkit
 - https://conda.anaconda.org/conda-forge
