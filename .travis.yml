@@ -84,7 +84,7 @@ before_deploy:
 deploy:
   # Deploy to Anaconda.org
   - provider: script
-    script: anaconda -t $ANACONDA_TOKEN upload -u insilichem $HOME/miniconda/conda-bld/**/tangram*.tar.bz2
+    script: anaconda -t $ANACONDA_TOKEN upload -u insilichem -l dev $HOME/miniconda/conda-bld/**/tangram*.tar.bz2
     skip_cleanup: true
     on:
       tags: true
