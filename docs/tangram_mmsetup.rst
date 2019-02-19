@@ -28,7 +28,7 @@ Requirements
 
 ::
 
-    conda install -c insilichem -c omnia tangram_mmsetup
+    conda install -c insilichem/label/dev -c insilichem -c omnia tangram_mmsetup
 
 .. note::
 

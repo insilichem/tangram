@@ -34,6 +34,6 @@ Requirements
 
 .. note::
 
-    conda install -c insilichem tangram_qmsetup
+    conda install -c insilichem/label/dev -c insilichem tangram_qmsetup
 
 .. _BSE: https://bse.pnl.gov/bse/portal

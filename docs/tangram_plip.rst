@@ -12,7 +12,7 @@ Depict protein-ligand interactions, as calculated with PLIP
 
 .. note::
 
-    This package is not currently compatible with the Tangram suite. It can be installed separately, though.
+    This package is not currently compatible with the Tangram suite due to incompatibilities with ``rdkit`` and ``openbabel``. It should be installable separately, though.
 
 Features
 ========
@@ -32,7 +32,7 @@ Requirements
 
 ::
 
-    conda install -c insilichem -c openbabel -c plip tangram_plip
+    conda install -c insilichem/label/dev -c insilichem -c openbabel -c plip tangram_plip
 
 .. note::
 

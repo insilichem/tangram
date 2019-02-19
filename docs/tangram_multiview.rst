@@ -25,4 +25,4 @@ Usage
 Requirements
 ============
 
-- ``libtangram`` (*pip*-installable)
+[WIP]

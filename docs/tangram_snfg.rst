@@ -47,7 +47,7 @@ Requirements
 
 .. note::
 
-    conda install -c insilichem tangram_snfg
+    conda install -c insilichem/label/dev -c insilichem tangram_snfg
 
 Acknowledgements
 ================

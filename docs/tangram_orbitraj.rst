@@ -27,4 +27,4 @@ Requirements
 
 ::
 
-    conda install -c insilichem tangram_orbitraj
+    conda install -c insilichem/label/dev -c insilichem tangram_orbitraj

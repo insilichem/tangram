@@ -27,7 +27,7 @@ Requirements
 
 ::
 
-    conda install -c insilichem tangram_normalmodes
+    conda install -c insilichem/label/dev -c insilichem tangram_normalmodes
 
 .. note::
 

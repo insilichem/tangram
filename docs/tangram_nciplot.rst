@@ -29,7 +29,7 @@ Requirements
 
 ::
 
-    conda install -c insilichem -c tangram_nciplot
+    conda install -c insilichem/label/dev -c insilichem -c tangram_nciplot
 
 .. note::
 

@@ -30,7 +30,7 @@ end
 Then for the `tangram` metapackage:
 
 1. Update the pinned version of the recently updated tan.
-2. Manually modify `installer/construct.yml` to reflect the new version (`constructor` does not support `GIT_DESCRIBE_*` variables yet).
+2. Manually modify `installer/construct.yml`, `conda-recipe/meta.yaml` and `docs/conf.py` to reflect the new version.
 3. Commit the changes.
 4. Tag the repository with a new version.
 5. Push so Travis CI can proceed.

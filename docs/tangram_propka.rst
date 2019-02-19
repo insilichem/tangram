@@ -28,4 +28,4 @@ Requirements
 
 .. note::
 
-    conda install -c insilichem tangram_propkagui
+    conda install -c insilichem/label/dev -c insilichem tangram_propkagui

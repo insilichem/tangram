@@ -1,6 +1,6 @@
-=========
-GAUDIView
-=========
+=================
+Tangram GAUDIView
+=================
 
 .. image:: https://img.shields.io/github/release/insilichem/gaudiview.svg
     :target: https://github.com/insilichem/gaudiview
@@ -34,7 +34,7 @@ Requirements
 
 ::
 
-    conda install -c insilichem tangram_bondorder
+    conda install -c insilichem/label/dev  -c insilichem tangram_bondorder
 
 .. _GaudiMM: http://github.com/insilichem/gaudi
 .. _GOLD: https://www.ccdc.cam.ac.uk/solutions/csd-discovery/components/gold/

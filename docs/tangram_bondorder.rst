@@ -31,6 +31,6 @@ Requirements
 
 ::
 
-    conda install -c insilichem -c rdkit -c omnia tangram_bondorder
+    conda install -c insilichem/label/dev -c insilichem -c rdkit -c omnia tangram_bondorder
 
 .. _[Chimera-users] bond order: http://www.cgl.ucsf.edu/pipermail/chimera-users/2009-October/004403.html

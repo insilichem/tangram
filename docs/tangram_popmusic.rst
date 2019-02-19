@@ -1,6 +1,4 @@
-===================.. note::
-
-    conda install -c insilichem tangram_popmusicgui
+===================
 Tangram PoPMuSiCGUI
 ===================
 
@@ -29,4 +27,4 @@ Requirements
 
 .. note::
 
-    conda install -c insilichem tangram_popmusicgui
+    conda install -c insilichem/label/dev -c insilichem tangram_popmusicgui

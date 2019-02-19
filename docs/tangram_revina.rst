@@ -27,4 +27,4 @@ Requirements
 
 .. note::
 
-    conda install -c insilichem tangram_vinarelaunch
+    conda install -c insilichem/label/dev -c insilichem tangram_vinarelaunch

@@ -65,7 +65,7 @@ Installing separate extension is not recommended but can be done.
 
     conda install -c insilichem <package name>
 
-.. note:
+.. note::
 
     More ``-c`` flags might be needed, depending on the requirements. Check each extension documentation page to see the needed conda channels.
 

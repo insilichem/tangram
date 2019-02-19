@@ -28,7 +28,7 @@ Requirements
 
 .. note::
 
-    conda install -c insilichem -c rdkit tangram_rdkit
+    conda install -c insilichem/label/dev -c insilichem -c rdkit tangram_rdkit
 
 .. note::
 

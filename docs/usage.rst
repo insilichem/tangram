@@ -27,19 +27,3 @@ Once installed (check :ref:`installsuite`), some of the extensions will run with
         # use `pychimera --gui` in other shells
 
     (...)
-
-
-Known issues
-============
-
-Some extensions rely on ``rdkit``, and ones on ``openbabel``. However, these two don't play well together when called with `pychimera --gui`. As a result, ``openbabel`` was left intentionally out of the ``conda`` environment. If you really needed, you can uninstall rdkit and then install ``openbabel`` with these convenience shell functions (Bash and Fish only):
-
-::
-
-    conda activate insilichem
-
-    # Switch to openbabel
-    tangram_openbabel
-
-    # Switch back to RDKit
-    tangram_rdkit

@@ -31,7 +31,7 @@ Requirements
 
 ::
 
-    conda install -c insilichem -c rdkit -c omnia tangram_dummyatoms
+    conda install -c insilichem/label/dev  -c insilichem -c rdkit -c omnia tangram_dummyatoms
 
 .. note::
 
