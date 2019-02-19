@@ -54,7 +54,7 @@ author = u'Jaime Rodríguez-Guerra, InsiliChem'
 # built documents.
 #
 # The short X.Y version.
-version = u'0.0.3'
+version = u'0.0.7'
 # The full version, including alpha/beta/rc tags.
 release = version
 
