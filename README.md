@@ -38,6 +38,8 @@ called *InsiliChem*.
     > -   [GAUDIView](https://github.com/insilichem/gaudiview):
     >     Lighweight visualization of results coming from docking,
     >     conformational search or multiobjective optimization
+    > -   [TalaDraw](https://github.com/insilichem/tangram_taladraw):
+    >     Build 3D structures out of two-dimensional sketches
 
 -   **Analysis**
 

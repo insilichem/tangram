@@ -16,6 +16,8 @@ List of Tans
 
     - `GAUDIView <https://github.com/insilichem/gaudiview>`_: Lightweight visualization of results coming from docking, conformational search or multiobjective optimization
 
+    - `TalaDraw <https://github.com/insilichem/tangram_taladraw>`_: Build 3D structures out of two-dimensional sketches
+
 - **Analysis**
 
     - `NCIPlotGUI <https://github.com/insilichem/tangram_nciplot>`_: Straightforward interface to setup calculations for NCIPlot and visualize them

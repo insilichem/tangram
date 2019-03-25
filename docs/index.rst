@@ -36,3 +36,4 @@ It's composed of several independent graphical interfaces and commands for UCSF 
    tangram_propka.rst
    tangram_revina.rst
    tangram_subalign.rst
+   tangram_taladraw.rst
