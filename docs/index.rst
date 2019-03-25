@@ -15,6 +15,7 @@ It's composed of several independent graphical interfaces and commands for UCSF 
    about.rst
    install.rst
    usage.rst
+   faq.rst
 
 .. toctree::
    :maxdepth: 0

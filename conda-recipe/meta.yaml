@@ -1,7 +1,7 @@
 # Build with:
 # conda build --python=2.7 -c local -c insilichem -c omnia -c rdkit .
 {% set name = "tangram" %}
-{% set version = "0.0.7" %}
+{% set version = "0.0.8" %}
 
 package:
   name: {{ name|lower }}
