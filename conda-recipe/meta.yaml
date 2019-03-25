@@ -34,6 +34,7 @@ requirements:
     - tangram_selection       0.0.2
     - tangram_subalign        0.0.3
     - tangram_snfg            0.0.2
+    - tangram_taladraw        0.0.1
     - tangram_vinarelaunch    0.0.2
 
 test:
