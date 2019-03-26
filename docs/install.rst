@@ -29,7 +29,7 @@ Instead of using the Bash installer, you can use conda (if you are already using
 
 ::
 
-    conda create -n tangram -c insilichem/label/dev -c insilichem -c conda-forge -c omnia -c rdkit tangram
+    conda create -n tangram -c insilichem/label/dev -c insilichem -c omnia -c rdkit -c conda-forge tangram
 
 Updating extensions
 ===================
